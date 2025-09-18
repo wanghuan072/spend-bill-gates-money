@@ -29,16 +29,34 @@ const allowedOrigins = [
   process.env.FRONTEND_URL  // 环境变量中的前端地址
 ].filter(Boolean); // 过滤掉undefined值
 
-// 开发环境允许所有来源，生产环境使用限制的域名
+// CORS配置 - 修复生产环境问题
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' ? allowedOrigins : true,
+  origin: function (origin, callback) {
+    // 允许没有origin的请求（比如移动应用）
+    if (!origin) return callback(null, true);
+    
+    // 开发环境允许所有来源
+    if (process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+    
+    // 生产环境检查允许的域名
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  optionsSuccessStatus: 200 // 某些旧版浏览器需要
 };
 
 app.use(cors(corsOptions));
 
+// 处理预检请求
+app.options('*', cors(corsOptions));
 
 
 // 速率限制
