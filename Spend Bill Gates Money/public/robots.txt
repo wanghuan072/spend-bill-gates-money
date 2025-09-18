@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# 禁止爬取管理页面和API
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /assets/
+
+# 允许爬取静态资源
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# 站点地图位置
+Sitemap: https://spendgatesmoney.com/sitemap.xml
+
+# 爬取延迟（秒）
+Crawl-delay: 1 
