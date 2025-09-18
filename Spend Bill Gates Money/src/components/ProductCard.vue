@@ -183,8 +183,7 @@ const handleSell = () => {
 }
 
 .product-image {
-  width: 100%;
-  height: 160px;
+  aspect-ratio: 3/2;
   margin-bottom: 10px;
   border-radius: 16px;
   overflow: hidden;
@@ -378,7 +377,6 @@ const handleSell = () => {
   }
 
   .product-image {
-    height: 140px;
     margin-bottom: 16px;
   }
 
@@ -411,13 +409,12 @@ const handleSell = () => {
   }
 
   .product-image {
-    height: 120px;
     margin-bottom: 10px;
   }
 
   .product-name {
     font-size: 14px;
-    min-height: 40px;
+    min-height: auto;
     margin-bottom: 6px;
   }
 

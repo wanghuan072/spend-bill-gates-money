@@ -16,7 +16,6 @@
       <div class="games-container">
         <div class="section-header">
           <h2 id="games-title" class="section-title">All Games</h2>
-          <p class="section-subtitle">Click on game cards to start playing</p>
         </div>
         <div class="games-grid" role="list" aria-label="Games list">
           <GameCard
@@ -135,31 +134,25 @@ const navigateToGame = (addressBar) => {
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
-  color: #2d3748;
-  margin: 0 0 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.section-subtitle {
-  font-size: 18px;
-  color: #4a5568;
-  margin: 0;
-  font-weight: 500;
-  opacity: 0.8;
-}
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 24px;
-  margin-top: 32px;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 15px;
 }
 
 /* 响应式设计 */
@@ -182,10 +175,6 @@ const navigateToGame = (addressBar) => {
 
   .section-title {
     font-size: 28px;
-  }
-
-  .section-subtitle {
-    font-size: 16px;
   }
 
   .games-grid {

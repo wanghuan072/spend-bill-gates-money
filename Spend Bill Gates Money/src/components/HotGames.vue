@@ -113,8 +113,7 @@ const selectGame = (addressBar) => {
 
 .hot-game-image {
   position: relative;
-  width: 100%;
-  height: 120px;
+  aspect-ratio: 1/1;
   overflow: hidden;
 }
 
@@ -189,10 +188,6 @@ const selectGame = (addressBar) => {
     gap: 20px;
   }
 
-  .hot-game-image {
-    height: 100px;
-  }
-
   .hot-game-title {
     font-size: 13px;
     padding: 10px 12px;
@@ -225,10 +220,6 @@ const selectGame = (addressBar) => {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-top: 20px;
-  }
-
-  .hot-game-image {
-    height: 80px;
   }
 
   .hot-game-title {

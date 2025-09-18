@@ -10,7 +10,7 @@
     <div v-else-if="!game" class="not-found">
       <h2>Game Not Found</h2>
       <button @click="goBack" class="back-btn">Back to Games</button>
-        </div>
+    </div>
 
     <!-- 详情主体 -->
     <div v-else class="layout">
@@ -26,71 +26,36 @@
                 </div>
                 <button class="play">PLAY</button>
               </div>
-              </div>
             </div>
+          </div>
 
           <!-- 游戏 iframe -->
           <div v-else class="iframe-wrap">
-            <iframe
-              ref="gameIframe"
-              :src="game.iframeUrl"
-              title="game"
-              frameborder="0"
-              allowfullscreen
-              @load="onIframeLoad"
-            ></iframe>
+            <iframe ref="gameIframe" :src="game.iframeUrl" title="game" frameborder="0" allowfullscreen
+              @load="onIframeLoad"></iframe>
           </div>
         </div>
 
         <!-- 操作栏：左标题，右侧全屏/网页全屏按钮 -->
         <div class="controls">
-          <div class="title">{{ game.title }}</div>
+          <h1 class="title">{{ game.title }}</h1>
           <div class="actions">
-            <button
-              class="btn"
-              :disabled="!showGameplay"
-              @click="toggleFullscreen"
-              title="Fullscreen"
-              aria-label="Fullscreen"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+            <button class="btn" :disabled="!showGameplay" @click="toggleFullscreen" title="Fullscreen"
+              aria-label="Fullscreen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <polyline points="9 21 3 21 3 15"></polyline>
                 <line x1="21" y1="3" x2="14" y2="10"></line>
                 <line x1="3" y1="21" x2="10" y2="14"></line>
               </svg>
             </button>
-            <button
-              class="btn"
-              :disabled="!showGameplay"
-              @click="togglePageFullscreen"
-              title="Page Fullscreen"
-              aria-label="Page Fullscreen"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+            <button class="btn" :disabled="!showGameplay" @click="togglePageFullscreen" title="Page Fullscreen"
+              aria-label="Page Fullscreen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
-                  d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
-                />
+                  d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
               </svg>
             </button>
           </div>
@@ -102,6 +67,12 @@
 
       <!-- 右列：评分/评论 -->
       <aside class="sidebar" v-if="!isPageFullscreen">
+         <!-- 热门游戏推荐 -->
+         <div class="panel">
+          <HotGames v-if="game" :exclude-address-bar="game.addressBar" @select="navigateToGame"
+            class="sidebar-hot-games" />
+        </div>
+
         <!-- 评分概览（展示区域） -->
         <div class="panel">
           <h3 class="panel-title">Rating Overview</h3>
@@ -109,13 +80,7 @@
           <div v-else-if="ratingsData.count > 0" class="summary-row">
             <div class="summary-score">{{ Number(averageRating).toFixed(1) }}</div>
             <div class="summary-stars" aria-label="average rating">
-              <span
-                v-for="n in 5"
-                :key="n"
-                class="star"
-                :class="{ filled: n <= Math.round(averageRating) }"
-                >★</span
-              >
+              <span v-for="n in 5" :key="n" class="star" :class="{ filled: n <= Math.round(averageRating) }">★</span>
             </div>
             <div class="summary-count">{{ ratingsData.count }} ratings</div>
           </div>
@@ -128,10 +93,7 @@
             <div v-for="n in 5" :key="n" class="rating-bar">
               <span class="rating-label">{{ n }}★</span>
               <div class="bar-container">
-                <div 
-                  class="bar" 
-                  :style="{ width: getRatingPercentage(n) + '%' }"
-                ></div>
+                <div class="bar" :style="{ width: getRatingPercentage(n) + '%' }"></div>
               </div>
               <span class="rating-count">{{ getRatingCount(n) }}</span>
             </div>
@@ -141,32 +103,19 @@
         <!-- 写评论（提交区域） -->
         <div class="panel">
           <h3 class="panel-title">Write Your Review</h3>
-          
+
           <div class="field">
             <label class="label">Nickname <span class="req">*</span></label>
-            <input
-              class="input"
-              type="text"
-              v-model="form.nickname"
-              placeholder="Enter your nickname"
-            />
+            <input class="input" type="text" v-model="form.nickname" placeholder="Enter your nickname" />
           </div>
           <div class="field">
             <label class="label">Rating <span class="req">*</span></label>
             <div class="stars-input" role="img" aria-label="select rating">
-              <span
-                v-for="n in 5"
-                :key="n"
-                class="star"
-                :class="{ 
-                  filled: n <= form.rating,
-                  hover: n <= hoverRating && hoverRating > 0
-                }"
-                @click="selectRating(n)"
-                @mouseenter="hoverRating = n"
-                @mouseleave="hoverRating = 0"
-                >{{ n <= (hoverRating || form.rating) ? '★' : '☆' }}</span
-              >
+              <span v-for="n in 5" :key="n" class="star" :class="{
+                filled: n <= form.rating,
+                hover: n <= hoverRating && hoverRating > 0
+              }" @click="selectRating(n)" @mouseenter="hoverRating = n" @mouseleave="hoverRating = 0">{{ n <=
+                  (hoverRating || form.rating) ? '★' : '☆' }}</span>
             </div>
             <div v-if="form.rating > 0" class="rating-selected">
               Selected {{ form.rating }} star rating
@@ -174,24 +123,16 @@
           </div>
           <div class="field">
             <label class="label">Comment <span class="req">*</span></label>
-            <textarea
-              class="textarea"
-              rows="4"
-              v-model="form.comment"
-              maxlength="1000"
-              placeholder="Share your thoughts about this game..."
-            ></textarea>
+            <textarea class="textarea" rows="4" v-model="form.comment" maxlength="1000"
+              placeholder="Share your thoughts about this game..."></textarea>
             <div class="hint">{{ form.comment.length }}/1000</div>
           </div>
-          <button 
-            class="btn wide" 
-            @click="submitReview" 
-            :disabled="commentStore.submitting || !form.nickname || !form.comment || !form.rating"
-          >
+          <button class="btn wide" @click="submitReview"
+            :disabled="commentStore.submitting || !form.nickname || !form.comment || !form.rating">
             {{ commentStore.submitting ? 'Submitting...' : 'Submit Review' }}
           </button>
           <p class="muted small">Connected to real API system, data will be saved to database.</p>
-    </div>
+        </div>
 
         <!-- 评论列表 -->
         <div class="panel">
@@ -209,24 +150,17 @@
               <div v-if="r.rating" class="review-rating">
                 <span class="review-rating-label">Rating:</span>
                 <div class="review-stars">
-                  <span
-                    v-for="n in 5"
-                    :key="n"
-                    class="star"
-                    :class="{ filled: n <= r.rating }"
-                    >★</span
-                  >
+                  <span v-for="n in 5" :key="n" class="star" :class="{ filled: n <= r.rating }">★</span>
                 </div>
               </div>
               <p class="review-text">{{ r.text }}</p>
             </li>
           </ul>
-      </div>
+        </div>
+
+       
       </aside>
     </div>
-    
-    <!-- 热门游戏推荐 -->
-    <HotGames v-if="game" :exclude-address-bar="game.addressBar" @select="navigateToGame" />
 
     <!-- 底部Footer -->
     <Footer />
@@ -294,11 +228,11 @@ function checkCanSubmit() {
     canSubmit.value = true
     return
   }
-  
+
   const now = Date.now()
   const timeDiff = now - lastSubmitTime.value
   const oneMinute = 60 * 1000
-  
+
   if (timeDiff >= oneMinute) {
     canSubmit.value = true
     remainingTime.value = 0
@@ -324,7 +258,7 @@ function startTimer() {
 // 加载评论和评分数据
 const loadData = async () => {
   if (!game.value) return
-  
+
   try {
     await commentStore.loadData(game.value.addressBar)
   } catch (error) {
@@ -335,29 +269,29 @@ const loadData = async () => {
 // 提交评论和评分
 async function submitReview() {
   if (!form.value.nickname || !form.value.comment || !form.value.rating || commentStore.submitting) return
-  
+
   // 检查时间限制
   if (!canSubmit.value) {
     alert(`⏰ You can only submit once per minute. Please wait ${remainingTime.value} seconds before trying again.`)
     return
   }
-  
+
   try {
     await commentStore.submitComment(game.value.addressBar, {
       name: form.value.nickname,
       text: form.value.comment,
       rating: form.value.rating
     })
-    
+
     // 设置提交时间限制
     lastSubmitTime.value = Date.now()
     checkCanSubmit()
     startTimer()
-    
+
     // 清空表单
     form.value = { nickname: '', rating: 0, comment: '' }
     hoverRating.value = 0
-    
+
     alert('Review and rating submitted successfully!')
   } catch (error) {
     alert('Submission failed: ' + error.message)
@@ -398,7 +332,7 @@ function toggleGameplay() {
 function toggleFullscreen() {
   if (!gameIframe.value) return
   if (!document.fullscreenElement) {
-    gameIframe.value.requestFullscreen?.().catch(() => {})
+    gameIframe.value.requestFullscreen?.().catch(() => { })
   } else {
     document.exitFullscreen?.()
   }
@@ -462,17 +396,17 @@ watch(
 onMounted(async () => {
   // 模拟轻量加载
   setTimeout(() => (loading.value = false), 200)
-  
+
   // 加载评论和评分数据
   await loadData()
-  
+
   // 检查提交限制
   checkCanSubmit()
 })
 
 onUnmounted(() => {
   if (isPageFullscreen.value) exitPageFullscreen()
-  
+
   // 清理定时器
   if (timer) {
     clearInterval(timer)
@@ -482,8 +416,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import '../styles/v-html-content.css';
-
 /* Game-Comment 原始样式 */
 .game-detail-wrapper {
   width: 100%;
@@ -508,7 +440,8 @@ onUnmounted(() => {
 
 /* 左列 */
 .main {
-  background: #f3f4f6; /* 全局淡灰色背景 */
+  background: #f3f4f6;
+  /* 全局淡灰色背景 */
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 12px;
@@ -518,7 +451,8 @@ onUnmounted(() => {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e5e7eb;
-  background: #f3f4f6; /* 与整体一致的淡灰底 */
+  background: #f3f4f6;
+  /* 与整体一致的淡灰底 */
 }
 
 .preview {
@@ -554,8 +488,10 @@ onUnmounted(() => {
 }
 
 .play {
-  background: #e5e7eb; /* 淡灰背景 */
-  color: #333; /* 深灰文字 */
+  background: #e5e7eb;
+  /* 淡灰背景 */
+  color: #333;
+  /* 深灰文字 */
   border: 1px solid #d1d5db;
   padding: 10px 18px;
   border-radius: 999px;
@@ -569,7 +505,8 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f4f6; /* 淡灰背景 */
+  background: #f3f4f6;
+  /* 淡灰背景 */
 }
 
 .iframe-wrap iframe {
@@ -586,14 +523,20 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: 8px 10px;
-  background: #f3f4f6; /* 浅灰色背景 */
+  background: #f3f4f6;
+  /* 浅灰色背景 */
   border: 1px solid #e5e7eb;
   border-radius: 8px;
 }
 
 .controls .title {
+  margin: 0;
+  /* 重置H1默认margin */
+  font-size: 16px;
+  /* 设置合适的字体大小 */
   font-weight: 600;
-  color: #333; /* 字体深灰 */
+  color: #333;
+  /* 字体深灰 */
 }
 
 .actions {
@@ -606,7 +549,8 @@ onUnmounted(() => {
   min-width: 36px;
   padding: 0 10px;
   border: 1px solid #e5e7eb;
-  background: #f9fafb; /* 更接近淡灰 */
+  background: #f9fafb;
+  /* 更接近淡灰 */
   color: #333;
   border-radius: 8px;
   cursor: pointer;
@@ -622,8 +566,10 @@ onUnmounted(() => {
   padding: 12px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  background: #f9fafb; /* 内容区浅灰 */
-  color: #333; /* 文字颜色 */
+  background: #f9fafb;
+  /* 内容区浅灰 */
+  color: #333;
+  /* 文字颜色 */
   line-height: 1.7;
 }
 
@@ -697,7 +643,8 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: #f3f4f6; /* 侧栏统一浅灰 */
+  background: #f3f4f6;
+  /* 侧栏统一浅灰 */
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 12px;
@@ -730,18 +677,21 @@ onUnmounted(() => {
 .summary-stars .star,
 .review-stars .star,
 .stars-input .star {
-  color: #d1d5db; /* 默认灰色 */
+  color: #d1d5db;
+  /* 默认灰色 */
   transition: color 0.2s;
 }
 
 .summary-stars .star.filled,
 .review-stars .star.filled,
 .stars-input .star.filled {
-  color: #f59e0b; /* 实心星（琥珀色） */
+  color: #f59e0b;
+  /* 实心星（琥珀色） */
 }
 
 .stars-input .star.hover {
-  color: #fbbf24; /* hover时浅橙色 */
+  color: #fbbf24;
+  /* hover时浅橙色 */
 }
 
 .stars-input .star {
@@ -830,7 +780,7 @@ onUnmounted(() => {
 .review-head {
   display: flex;
   justify-content: space-between;
-    font-size: 12px;
+  font-size: 12px;
   color: #666;
   margin-bottom: 4px;
 }
@@ -868,7 +818,8 @@ onUnmounted(() => {
 }
 
 .muted {
-  color: #666; /* 次要文字 */
+  color: #666;
+  /* 次要文字 */
 }
 
 .small {
@@ -921,16 +872,70 @@ onUnmounted(() => {
   font-size: 12px;
   color: #059669;
   font-weight: 500;
-  }
+}
 
-  .back-btn {
+.back-btn {
   background: #007bff;
   color: white;
   border: none;
-    padding: 10px 20px;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
   margin-top: 16px;
+}
+
+/* Sidebar中的HotGames样式 */
+.sidebar-hot-games {
+  margin-top: 0;
+  /* 移除默认的上边距 */
+  padding: 0;
+}
+
+.sidebar-hot-games :deep(.hot-games-container) {
+  padding: 0;
+  /* 移除默认padding */
+}
+
+.sidebar-hot-games :deep(.hot-games-header) {
+  margin-bottom: 12px;
+  /* 减少标题下方间距 */
+}
+
+.sidebar-hot-games :deep(.hot-games-title) {
+  font-size: 20px;
+  /* 增大标题字体 */
+  font-weight: bold;
+  /* 增加字体粗细 */
+  margin: 0 0 6px 0;
+  color: #333;
+}
+
+.sidebar-hot-games :deep(.hot-games-subtitle) {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.sidebar-hot-games :deep(.hot-games-grid) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 一行显示两个 */
+  gap: 10px;
+  /* 减少间距以适应sidebar */
+  margin-top: 10px;
+}
+
+.sidebar-hot-games :deep(.hot-game-item) {
+  border-radius: 6px;
+  /* 稍微减少圆角 */
+}
+
+.sidebar-hot-games :deep(.hot-game-title) {
+  font-size: 12px;
+  /* 减少字体大小 */
+  padding: 8px;
+  /* 减少内边距 */
+  line-height: 1.3;
 }
 
 /* 自适应 */
@@ -939,5 +944,198 @@ onUnmounted(() => {
     grid-template-columns: 1fr;
     padding: 12px;
   }
+
+  /* 移动端时HotGames移回底部 */
+  .sidebar .panel:has(.sidebar-hot-games) {
+    order: 999;
+    /* 确保在移动端时显示在最后 */
+  }
+
+  .preview {
+    aspect-ratio: 1 / 2;
+  }
+
+  .iframe-wrap {
+    aspect-ratio: 1 / 2;
+  }
 }
-</style> 
+
+/* V-HTML 内容样式 - 使用深度选择器 */
+.about:deep(h2) {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 32px 0 20px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+}
+
+.about:deep(h3) {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 28px 0 16px 0;
+  color: #4a5568;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.4;
+}
+
+.about:deep(h3::before) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.about:deep(h4) {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 24px 0 12px 0;
+  color: #2d3748;
+  line-height: 1.4;
+}
+
+.about:deep(h5) {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+.about:deep(p) {
+  margin: 16px 0;
+  line-height: 1.8;
+  color: #2d3748;
+  font-size: 16px;
+}
+
+.about:deep(ul) {
+  margin: 20px 0;
+  padding-left: 24px;
+  color: #2d3748;
+  list-style: none;
+}
+
+.about:deep(ul li) {
+  position: relative;
+  margin: 12px 0;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.about:deep(ul li::before) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.about:deep(ol) {
+  margin: 20px 0;
+  padding-left: 24px;
+  color: #2d3748;
+  counter-reset: ol-counter;
+}
+
+.about:deep(ol li) {
+  position: relative;
+  margin: 12px 0;
+  padding-left: 32px;
+  line-height: 1.7;
+  counter-increment: ol-counter;
+}
+
+.about:deep(ol li::before) {
+  content: counter(ol-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.about:deep(strong) {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.about:deep(em) {
+  font-style: italic;
+  color: #4a5568;
+}
+
+.about:deep(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:deep(img:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about:deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about:deep(th),
+.about:deep(td) {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about:deep(th) {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about:deep(a) {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.about:deep(a:hover) {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
+}
+</style>

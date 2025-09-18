@@ -45,7 +45,7 @@
             <div class="stat-item">
               <span class="stat-label">Remaining</span>
               <span class="stat-value" role="text" aria-label="Percentage remaining">
-                {{ (100 - parseFloat(gameStore.spentPercentage)).toFixed(8) }}%
+                {{ (100 - parseFloat(gameStore.spentPercentage)).toFixed(4) }}%
               </span>
             </div>
           </div>
@@ -269,7 +269,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import '../styles/v-html-content.css';
 .home-view {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -745,7 +744,8 @@ onUnmounted(() => {
   .balance-main {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .balance-amount {
@@ -798,7 +798,7 @@ onUnmounted(() => {
   }
 
   .character-details-container {
-    padding: 16px;
+    padding: 10px;
   }
 
   .reset-section {
@@ -818,4 +818,183 @@ onUnmounted(() => {
     max-width: 100%;
   }
 }
+
+/* V-HTML 内容样式 - 使用深度选择器 */
+.v-html-content:deep(h2) {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 32px 0 20px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+}
+
+.v-html-content:deep(h3) {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 28px 0 16px 0;
+  color: #4a5568;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.4;
+}
+
+.v-html-content:deep(h3::before) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.v-html-content:deep(h4) {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 24px 0 12px 0;
+  color: #2d3748;
+  line-height: 1.4;
+}
+
+.v-html-content:deep(h5) {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+.v-html-content:deep(p) {
+  margin: 16px 0;
+  line-height: 1.8;
+  color: #2d3748;
+  font-size: 16px;
+}
+
+.v-html-content:deep(ul) {
+  margin: 20px 0;
+  padding-left: 24px;
+  color: #2d3748;
+  list-style: none;
+}
+
+.v-html-content:deep(ul li) {
+  position: relative;
+  margin: 12px 0;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.v-html-content:deep(ul li::before) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.v-html-content:deep(ol) {
+  margin: 20px 0;
+  padding-left: 24px;
+  color: #2d3748;
+  counter-reset: ol-counter;
+}
+
+.v-html-content:deep(ol li) {
+  position: relative;
+  margin: 12px 0;
+  padding-left: 32px;
+  line-height: 1.7;
+  counter-increment: ol-counter;
+}
+
+.v-html-content:deep(ol li::before) {
+  content: counter(ol-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.v-html-content:deep(strong) {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.v-html-content:deep(em) {
+  font-style: italic;
+  color: #4a5568;
+}
+
+.v-html-content:deep(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v-html-content:deep(img:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.v-html-content:deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.v-html-content:deep(th), .v-html-content:deep(td) {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.v-html-content:deep(th) {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.v-html-content:deep(a) {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.v-html-content:deep(a:hover) {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
+}
+
 </style>

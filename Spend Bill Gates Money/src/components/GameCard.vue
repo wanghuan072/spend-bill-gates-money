@@ -70,8 +70,7 @@ const playGame = () => {
 }
 
 .game-image {
-  width: 100%;
-  height: 120px;
+  aspect-ratio: 1/1;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -105,24 +104,19 @@ const playGame = () => {
 }
 
 .game-info {
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .game-title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
   color: #2d3748;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.2;
   text-align: center;
 }
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
-  .game-image {
-    height: 180px;
-  }
-
   .game-info {
     padding: 12px 16px 16px;
   }
@@ -133,16 +127,12 @@ const playGame = () => {
 }
 
 @media (max-width: 768px) {
-  .game-image {
-    height: 160px;
-  }
-
   .game-info {
-    padding: 10px 12px 12px;
+    padding: 10px;
   }
 
   .game-title {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 </style> 

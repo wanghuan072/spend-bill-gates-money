@@ -25,7 +25,7 @@ export const useGameStore = defineStore('game', () => {
   })
 
   const spentPercentage = computed(() => {
-    return ((spentAmount.value / initialBalance.value) * 100).toFixed(8)
+    return ((spentAmount.value / initialBalance.value) * 100).toFixed(4)
   })
 
   // 检查是否花完所有钱
