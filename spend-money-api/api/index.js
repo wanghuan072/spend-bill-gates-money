@@ -24,7 +24,8 @@ const allowedOrigins = [
   'http://localhost:5173',  // 本地开发前端
   'http://localhost:3000',  // 本地开发后端（如果需要）
   'https://spendgatesmoney.com',  // Spend Bill Gates Money 生产环境
-  'https://game-comment.vercel.app',  // 生产环境前端地址
+  'https://www.spendgatesmoney.com',  // WWW版本
+  'https://spend-bill-gates-money.vercel.app',  // Vercel默认域名
   process.env.FRONTEND_URL  // 环境变量中的前端地址
 ].filter(Boolean); // 过滤掉undefined值
 
