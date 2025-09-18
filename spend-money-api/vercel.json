@@ -1,5 +1,5 @@
 {
-  "name": "spend_money-api",
+  "name": "spend-money-api",
   "version": 2,
   "builds": [
     {
@@ -13,9 +13,9 @@
       "dest": "/api/index.js"
     }
   ],
-  "env": {
-    "PROJECT_PREFIX": "spend_money",
-    "DATABASE_URL": "@database_url",
-    "JWT_SECRET": "@jwt_secret"
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 10
+    }
   }
 }
