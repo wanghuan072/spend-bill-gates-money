@@ -3,36 +3,6 @@
     <!-- 头部组件 -->
     <Header />
 
-    <!-- PC横幅广告1 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e2" data-zoneid="5726872"></ins>
-    </aside>
-
-    <!-- PC 粘性侧边横幅广告右侧 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726882"></ins>
-    </aside>
-
-    <!-- PC 粘性侧边横幅广告左侧 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726884"></ins>
-    </aside>
-
-    <!-- PC粘性底部横幅广告1 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726920"></ins>
-    </aside>
-
-    <!-- 移动横幅广告1 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e10" data-zoneid="5726906"></ins>
-    </aside>
-
-    <!-- 移动粘性底部横幅广告1 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e14" data-zoneid="5726914"></ins> 
-    </aside>
-
     <!-- 游戏头部区域 -->
     <section class="game-header" aria-labelledby="game-title" v-if="gameStore.currentCharacter">
       <div class="header-content">
@@ -64,7 +34,6 @@
                 {{ gameStore.spentPercentage }}%
               </span>
             </div>
-            <div class="stat-divider" aria-hidden="true"></div>
             <div class="stat-item">
               <span class="stat-label">Remaining</span>
               <span class="stat-value" role="text" aria-label="Percentage remaining">
@@ -72,13 +41,49 @@
               </span>
             </div>
           </div>
-          <button class="view-receipt-btn" @click="toggleReceipt" aria-label="View purchase receipt">
-            <span class="receipt-icon" aria-hidden="true">📄</span>
-            View Receipt
-          </button>
+          <div class="balance-controls">
+            <button class="reset-btn-compact" @click="resetGame" aria-label="Reset game to initial state">
+              <span class="reset-icon">⟲</span>
+              <span class="reset-text">Reset</span>
+            </button>
+            <button class="view-receipt-btn" @click="toggleReceipt" aria-label="View purchase receipt">
+              <span class="receipt-icon" aria-hidden="true">📄</span>
+              <span class="receipt-text">Receipt</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- PC横幅广告1 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e2" data-zoneid="5726872"></ins>
+    </aside>
+
+    <!-- PC 粘性侧边横幅广告右侧 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726882"></ins>
+    </aside>
+
+    <!-- PC 粘性侧边横幅广告左侧 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726884"></ins>
+    </aside>
+
+    <!-- PC粘性底部横幅广告1 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726920"></ins>
+    </aside>
+
+    <!-- 移动横幅广告1 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e10" data-zoneid="5726906"></ins>
+    </aside>
+
+    <!-- 移动粘性底部横幅广告1 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e14" data-zoneid="5726914"></ins> 
+    </aside>
 
     <!-- 商品列表区域 -->
     <section class="products-section" aria-labelledby="products-title" v-if="gameStore.currentCharacter">
@@ -121,12 +126,6 @@
       </div>
     </section>
 
-    <!-- 重置游戏按钮 -->
-    <section class="reset-section" v-if="gameStore.currentCharacter">
-      <button class="reset-btn" @click="resetGame" aria-label="Reset game to initial state">
-        Reset Game
-      </button>
-    </section>
 
     <!-- PC横幅广告3 -->
     <aside v-if="!isMobile" class="ad-container">
@@ -506,14 +505,29 @@ onUnmounted(() => {
 
 .balance-main {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 0;
+  align-items: center;
+  gap: 30px;
 }
 
-/* .balance-info {
+.balance-info {
+  flex: 0 0 auto;
+}
+
+.balance-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   flex: 1;
-} */
+  justify-content: center;
+}
+
+.balance-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
 
 .balance-label {
   font-size: 14px;
@@ -535,21 +549,19 @@ onUnmounted(() => {
   line-height: 1.2;
 }
 
-.balance-stats {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: rgba(160, 174, 192, 0.1);
-  padding: 12px 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(160, 174, 192, 0.2);
-}
 
 .stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  text-align: center;
+  background: rgba(160, 174, 192, 0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(160, 174, 192, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(160, 174, 192, 0.15);
+  transform: translateY(-2px);
 }
 
 .stat-label {
@@ -1075,4 +1087,143 @@ onUnmounted(() => {
   display: inline-block;
   max-width: 100%;
 }
+
+/* 紧凑重置按钮样式 */
+.reset-btn-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+
+.view-receipt-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.reset-btn-compact:hover {
+  background: linear-gradient(135deg, #ff5252, #e53e3e);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.view-receipt-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn-compact:active,
+.view-receipt-btn:active {
+  transform: translateY(0);
+}
+
+.reset-btn-compact:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.reset-icon {
+  font-size: 16px;
+  display: inline-block;
+  animation: rotate 2s linear infinite paused;
+}
+
+.reset-btn-compact:hover .reset-icon {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reset-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .balance-main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .balance-stats {
+    gap: 15px;
+  }
+  
+  .balance-controls {
+    gap: 10px;
+  }
+  
+  .reset-btn-compact,
+  .view-receipt-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    gap: 5px;
+  }
+  
+  .reset-icon,
+  .receipt-icon {
+    font-size: 14px;
+  }
+  
+  .reset-text,
+  .receipt-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .balance-main {
+    gap: 15px;
+  }
+  
+  .balance-stats {
+    gap: 12px;
+  }
+  
+  .stat-item {
+    padding: 6px 12px;
+  }
+  
+  .reset-btn-compact,
+  .view-receipt-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .reset-icon,
+  .receipt-icon {
+    font-size: 13px;
+  }
+}
+
 </style>
