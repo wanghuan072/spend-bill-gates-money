@@ -3,15 +3,42 @@
     <!-- 头部组件 -->
     <Header />
 
+    <!-- PC横幅广告1 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e2" data-zoneid="5726872"></ins>
+    </aside>
+
+    <!-- PC 粘性侧边横幅广告右侧 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726882"></ins>
+    </aside>
+
+    <!-- PC 粘性侧边横幅广告左侧 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726884"></ins>
+    </aside>
+
+    <!-- PC粘性底部横幅广告1 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e17" data-zoneid="5726920"></ins>
+    </aside>
+
+    <!-- 移动横幅广告1 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e10" data-zoneid="5726906"></ins>
+    </aside>
+
+    <!-- 移动粘性底部横幅广告1 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e14" data-zoneid="5726914"></ins> 
+    </aside>
+
     <!-- 游戏头部区域 -->
     <section class="game-header" aria-labelledby="game-title" v-if="gameStore.currentCharacter">
       <div class="header-content">
         <div class="bill-gates-image">
-          <img
-            :src="gameStore.currentCharacter.image"
-            :alt="`${gameStore.currentCharacter.name} profile picture`"
-            class="profile-image"
-          />
+          <img :src="gameStore.currentCharacter.image" :alt="`${gameStore.currentCharacter.name} profile picture`"
+            class="profile-image" />
           <div class="image-glow" aria-hidden="true"></div>
         </div>
         <h1 id="game-title" class="game-title">{{ gameStore.currentCharacter.title }}</h1>
@@ -20,12 +47,8 @@
     </section>
 
     <!-- 余额显示区域 - 固定头部 -->
-    <section
-      class="balance-section"
-      :class="{ fixed: isScrolled }"
-      aria-labelledby="balance-title"
-      v-if="gameStore.currentCharacter"
-    >
+    <section class="balance-section" :class="{ fixed: isScrolled }" aria-labelledby="balance-title"
+      v-if="gameStore.currentCharacter">
       <div class="balance-container">
         <div class="balance-main">
           <div class="balance-info">
@@ -49,11 +72,7 @@
               </span>
             </div>
           </div>
-          <button
-            class="view-receipt-btn"
-            @click="toggleReceipt"
-            aria-label="View purchase receipt"
-          >
+          <button class="view-receipt-btn" @click="toggleReceipt" aria-label="View purchase receipt">
             <span class="receipt-icon" aria-hidden="true">📄</span>
             View Receipt
           </button>
@@ -62,35 +81,32 @@
     </section>
 
     <!-- 商品列表区域 -->
-    <section
-      class="products-section"
-      aria-labelledby="products-title"
-      v-if="gameStore.currentCharacter"
-    >
+    <section class="products-section" aria-labelledby="products-title" v-if="gameStore.currentCharacter">
       <div class="products-container">
         <div class="section-header">
           <h2 id="products-title" class="section-title">Available Items</h2>
           <p class="section-subtitle">Choose from luxury items to philanthropic causes</p>
         </div>
         <div class="products-grid" role="list" aria-label="Available products">
-          <ProductCard
-            v-for="product in gameStore.currentProducts"
-            :key="product.id"
-            :product="product"
-            role="listitem"
-          />
+          <ProductCard v-for="product in gameStore.currentProducts" :key="product.id" :product="product"
+            role="listitem" />
         </div>
       </div>
     </section>
 
+    <!-- PC横幅广告2 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e2" data-zoneid="5726874"></ins>
+    </aside>
+
+    <!-- 移动横幅广告2 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e10" data-zoneid="5726910"></ins>
+    </aside>
+
     <!-- 收据区域 -->
-    <section
-      class="receipt-section"
-      v-if="gameStore.showReceipt"
-      role="dialog"
-      aria-labelledby="receipt-title"
-      aria-modal="true"
-    >
+    <section class="receipt-section" v-if="gameStore.showReceipt" role="dialog" aria-labelledby="receipt-title"
+      aria-modal="true">
       <div class="receipt-overlay" @click="closeReceipt" aria-hidden="true"></div>
       <div class="receipt-modal">
         <ReceiptTable :show-receipt="gameStore.showReceipt" @close="closeReceipt" />
@@ -98,10 +114,8 @@
     </section>
 
     <!-- 角色详细信息 -->
-    <section
-      class="character-details-section"
-      v-if="gameStore.currentCharacter && gameStore.currentCharacter.detailsHtml"
-    >
+    <section class="character-details-section"
+      v-if="gameStore.currentCharacter && gameStore.currentCharacter.detailsHtml">
       <div class="character-details-container">
         <div class="v-html-content" v-html="gameStore.currentCharacter.detailsHtml"></div>
       </div>
@@ -114,21 +128,33 @@
       </button>
     </section>
 
+    <!-- PC横幅广告3 -->
+    <aside v-if="!isMobile" class="ad-container">
+      <ins class="eas6a97888e2" data-zoneid="5726876"></ins>
+    </aside>
+
+    <!-- 移动横幅广告3 -->
+    <aside v-if="isMobile" class="ad-container">
+      <ins class="eas6a97888e10" data-zoneid="5726912"></ins>
+    </aside>
+
+
     <!-- 热门游戏区域 -->
     <HotGames @select="navigateToGame" />
 
+    <!-- 原生广告-通用 -->
+    <aside class="ad-container">
+      <ins class="eas6a97888e20" data-zoneid="5726896"></ins>
+    </aside>
+
+
     <!-- 钱花完弹窗 -->
-    <MoneyExhaustedModal
-      :show="gameStore.showMoneyExhaustedModal"
+    <MoneyExhaustedModal :show="gameStore.showMoneyExhaustedModal"
       :character-name="gameStore.currentCharacter?.name || 'Bill Gates'"
       :character-image="gameStore.currentCharacter?.image || '/images/bill-gates.webp'"
-      :total-spent="gameStore.spentAmount"
-      :total-items="gameStore.totalItemsPurchased"
-      :format-currency="gameStore.formatCurrency"
-      @close="handleCloseExhaustedModal"
-      @restart="handleRestartFromExhausted"
-      @view-receipt="handleViewReceiptFromModal"
-    />
+      :total-spent="gameStore.spentAmount" :total-items="gameStore.totalItemsPurchased"
+      :format-currency="gameStore.formatCurrency" @close="handleCloseExhaustedModal"
+      @restart="handleRestartFromExhausted" @view-receipt="handleViewReceiptFromModal" />
 
     <!-- 底部Footer -->
     <Footer />
@@ -152,6 +178,10 @@ import {
   generateOrganizationSchema,
   generateWebsiteSchema,
 } from '../utils/structuredData.js'
+
+import { useDeviceDetection } from '@/utils/useDeviceDetection.js'
+
+const { isMobile } = useDeviceDetection()
 
 const router = useRouter()
 const route = useRoute()
@@ -235,6 +265,33 @@ const handleScroll = () => {
   isScrolled.value = shouldBeFixed
 }
 
+// 广告配置列表
+const adConfigs = [
+  { selector: '.eas6a97888e2', delay: 0 },    // 头部广告
+  { selector: '.eas6a97888e35', delay: 300 }, // 底部广告
+  { selector: '.eas6a97888e36', delay: 600 }, // 中间广告
+  // 可以继续添加更多广告位
+  // { selector: '.eas6a97888e37', delay: 900 }, // 侧边广告
+  // { selector: '.eas6a97888e38', delay: 1200 }, // 其他位置广告
+]
+
+// 延迟加载多个广告函数
+const loadAdsWithDelay = (baseDelay = 1000) => {
+  setTimeout(() => {
+    if (window.AdProvider) {
+      adConfigs.forEach((config, index) => {
+        setTimeout(() => {
+          const adElement = document.querySelector(config.selector)
+          if (adElement) {
+            console.log(`Loading ad: ${config.selector}`)
+            window.AdProvider.push({ "serve": {} })
+          }
+        }, config.delay)
+      })
+    }
+  }, baseDelay)
+}
+
 // 组件挂载时根据路由设置角色
 onMounted(async () => {
   // 根据当前路由设置正确的角色
@@ -260,6 +317,9 @@ onMounted(async () => {
 
   // 设置初始SEO
   setCharacterPageSEO()
+
+  // 延迟加载所有广告
+  loadAdsWithDelay(1000)
 })
 
 // 组件卸载时移除滚动监听
@@ -343,6 +403,7 @@ onUnmounted(() => {
     opacity: 0.3;
     transform: scale(1);
   }
+
   100% {
     opacity: 0.5;
     transform: scale(1.1);
@@ -362,10 +423,12 @@ onUnmounted(() => {
 }
 
 @keyframes titleFloat {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -389,7 +452,8 @@ onUnmounted(() => {
 
 .balance-section.fixed {
   position: fixed;
-  top: 0; /* 考虑Header高度 */
+  top: 0;
+  /* 考虑Header高度 */
   left: 0;
   right: 0;
   z-index: 100;
@@ -430,9 +494,11 @@ onUnmounted(() => {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -969,7 +1035,8 @@ onUnmounted(() => {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.v-html-content:deep(th), .v-html-content:deep(td) {
+.v-html-content:deep(th),
+.v-html-content:deep(td) {
   padding: 16px 20px;
   text-align: left;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -997,4 +1064,15 @@ onUnmounted(() => {
   border-bottom-color: #764ba2;
 }
 
+/* 广告容器样式 */
+.ad-container {
+  max-width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.ad-container ins {
+  display: inline-block;
+  max-width: 100%;
+}
 </style>

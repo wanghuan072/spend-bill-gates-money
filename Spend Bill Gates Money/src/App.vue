@@ -30,6 +30,12 @@ body {
   flex-direction: column;
 }
 
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 /* 确保页面内容能够撑满整个视口高度 */
 main {
   flex: 1;

@@ -12,24 +12,64 @@
     </section>
 
     <!-- 联系信息 -->
-    <section class="contact-section" aria-labelledby="contact-title">
-      <div class="contact-container">
+    <section class="contact-section">
+      <div class="container">
         <div class="contact-content">
-          <h2 id="contact-title" class="section-title">Get in Touch</h2>
-          <p class="contact-description">
-            Have questions about our games or need technical support? We're here to help!
-          </p>
+          <h2>Get in Touch</h2>
+          <p>We'd love to hear from you! Whether you have questions about our services, suggestions for improvement, or
+            just want to say hello, we're here to help.</p>
 
-          <div class="contact-info">
-            <div class="contact-item">
-              <h3>Email</h3>
-              <p>kadiyamobi89@gmail.com</p>
-            </div>
-            <div class="contact-item">
-              <h3>Response Time</h3>
-              <p>We typically respond within 24 hours</p>
-            </div>
-          </div>
+          <h2>Contact Information</h2>
+          <p><strong>Email:</strong> <a href="mailto:[wyong@spendgatesmoney.com]">[wyong@spendgatesmoney.com]</a></p>
+          <p>We typically respond within 24 hours.</p>
+
+          <h2>Response Time</h2>
+          <ul>
+            <li><strong>Monday - Friday:</strong> Within 24 hours</li>
+            <li><strong>Weekends:</strong> Within 48 hours</li>
+          </ul>
+
+          <h2>What We Can Help With</h2>
+          <ul>
+            <li><strong>Account or Access Issues:</strong> Help with login, membership, or subscription problems</li>
+            <li><strong>Website Feedback:</strong> Suggestions for improving ["spendgatesmoney.com"] (["spendgatesmoney.com"])</li>
+            <li><strong>Content Requests:</strong> Ideas for new articles, guides, or resources</li>
+            <li><strong>Technical Support:</strong> Assistance with site functionality</li>
+            <li><strong>Partnership Inquiries:</strong> Collaboration opportunities</li>
+            <li><strong>General Questions:</strong> Anything else related to ["spendgatesmoney.com"] and our services</li>
+          </ul>
+
+          <h2>Before You Contact Us</h2>
+          <p>To help us provide the best assistance, please include the following details in your email:</p>
+          <ul>
+            <li>Your specific question or issue</li>
+            <li>Any error messages (if applicable)</li>
+            <li>Steps you've already tried</li>
+            <li>Your device and browser information (if relevant)</li>
+          </ul>
+
+          <h2>Frequently Asked Questions</h2>
+          <ul>
+            <li><strong>How often is your content updated?</strong><br>We update our resources regularly to ensure
+              accuracy and freshness.</li>
+            <li><strong>Is your content safe and reliable?</strong><br>Yes, all information we provide is verified and
+              sourced responsibly.</li>
+            <li><strong>Can I suggest new content?</strong><br>Absolutely! We welcome your ideas and contributions—just
+              send them our way.</li>
+          </ul>
+
+          <h2>Business Hours</h2>
+          <p>Our team is available Monday through Friday, 9:00 AM to 6:00 PM (EST). While we may respond outside these
+            hours, please allow up to 24–48 hours for replies during weekends and holidays.</p>
+
+          <h2>Privacy</h2>
+          <p>We respect your privacy and will never share your personal information with third parties. All
+            communications are kept confidential and used only to provide you with the best possible service.</p>
+
+          <h2>Thank You</h2>
+          <p>Thank you for being part of the ["spendgatesmoney.com"] community! Your feedback and support help us continue to provide the
+            best experience for our users worldwide.</p>
+
         </div>
       </div>
     </section>
@@ -83,72 +123,111 @@ import Footer from '../components/Footer.vue'
   line-height: 1.6;
 }
 
-.contact-section {
-  padding: 40px 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .contact-content {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.section-title {
-  font-size: 32px;
+.contact-content section {
+  margin-bottom: 20px;
+}
+
+.contact-content section:last-child {
+  margin-bottom: 0;
+}
+
+.contact-content h2 {
+  font-size: 24px;
   font-weight: 700;
-  margin: 0 0 16px;
+  margin-bottom: 20px;
   color: #1f2937;
-  text-align: center;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.5;
 }
 
-.contact-description {
+.contact-content h2:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.contact-content p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.contact-content ul {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.contact-content li {
+  list-style: none;
+  position: relative;
+  padding: 10px 0 10px 20px;
+  color: #4b5563;
   font-size: 16px;
-  color: #6b7280;
-  text-align: center;
-  margin-bottom: 40px;
-  line-height: 1.6;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.contact-item {
-  text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.contact-item h3 {
+.contact-content li:before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: #667eea;
+  font-weight: bold;
   font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 8px;
-  color: #374151;
 }
 
-.contact-item p {
-  font-size: 16px;
-  color: #6b7280;
-  margin: 0;
+.contact-content strong {
+  color: #1f2937;
+  font-weight: 600;
 }
+
+.contact-content a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-content a:hover {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
+}
+
+
+
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .page-header {
+    padding: 20px 10px 20px;
+  }
+
   .page-title {
-    font-size: 32px;
+    font-size: 24px;
+    margin-bottom: 5px;
   }
 
   .page-subtitle {
@@ -156,16 +235,33 @@ import Footer from '../components/Footer.vue'
   }
 
   .contact-content {
-    padding: 30px 20px;
+    padding: 10px;
+    border-radius: 16px;
   }
 
-  .section-title {
-    font-size: 24px;
+  .contact-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
-  .contact-info {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .contact-content ul{
+    margin-bottom: 10px;
   }
+
+  .contact-content p,
+  .contact-content li {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .contact-content li{
+    padding: 5px 0 5px 10px;
+  }
+
+  .contact-content p{
+    margin-bottom: 10px;
+  }
+
+
 }
-</style> 
+</style>

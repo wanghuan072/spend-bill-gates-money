@@ -75,6 +75,16 @@ const router = createRouter({
       }
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue'),
+      meta: {
+        title: 'About - Spend Bill Gates Money',
+        description: 'About Spend Bill Gates Money',
+        keywords: 'about, spend bill gates money, about us'
+      }
+    },
+    {
       path: '/copyright',
       name: 'copyright',
       component: () => import('../views/CopyrightView.vue'),
@@ -161,6 +171,8 @@ router.beforeEach((to, from, next) => {
     breadcrumbs.push({ name: 'Terms of Service', url: '/terms-of-service' })
   } else if (to.name === 'copyright') {
     breadcrumbs.push({ name: 'Copyright', url: '/copyright' })
+  } else if (to.name === 'about') {
+    breadcrumbs.push({ name: 'About', url: '/about' })
   } else if (to.name !== 'home') {
     // 人物页面
     const character = Object.values(availableCharacters).find(c => c.addressBar === to.name)

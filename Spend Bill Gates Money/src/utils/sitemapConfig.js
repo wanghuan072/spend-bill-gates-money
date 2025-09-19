@@ -43,6 +43,12 @@ export function generateSitemapData() {
       lastmod: currentDate,
       changefreq: 'yearly',
       priority: 0.3
+    },
+    {
+      url: '/about',
+      lastmod: currentDate,
+      changefreq: 'yearly',
+      priority: 0.3
     }
   ]
 
@@ -76,7 +82,8 @@ export function getAllRoutes() {
     '/contact',
     '/privacy-policy',
     '/terms-of-service',
-    '/copyright'
+    '/copyright',
+    '/about'
   ]
 
   // 生成角色页面路由（除了Bill Gates）

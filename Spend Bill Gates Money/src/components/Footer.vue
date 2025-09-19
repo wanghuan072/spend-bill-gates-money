@@ -7,6 +7,7 @@
         <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
         <a href="/terms-of-service" class="footer-link">Terms of Use</a>
         <a href="/copyright" class="footer-link">Copyrights</a>
+        <a href="/about" class="footer-link">About</a>
       </div>
 
       <!-- 版权信息 -->
