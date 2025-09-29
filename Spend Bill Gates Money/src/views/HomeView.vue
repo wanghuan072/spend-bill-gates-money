@@ -54,37 +54,6 @@
         </div>
       </div>
     </section>
-
-    <!-- PC横幅广告1 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e2" data-zoneid="5726872"></ins>
-    </aside>
-
-    <!-- PC 粘性侧边横幅广告右侧 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726882"></ins>
-    </aside>
-
-    <!-- PC 粘性侧边横幅广告左侧 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726884"></ins>
-    </aside>
-
-    <!-- PC粘性底部横幅广告1 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e17" data-zoneid="5726920"></ins>
-    </aside>
-
-    <!-- 移动横幅广告1 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e10" data-zoneid="5726906"></ins>
-    </aside>
-
-    <!-- 移动粘性底部横幅广告1 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e14" data-zoneid="5726914"></ins> 
-    </aside>
-
     <!-- 商品列表区域 -->
     <section class="products-section" aria-labelledby="products-title" v-if="gameStore.currentCharacter">
       <div class="products-container">
@@ -98,16 +67,6 @@
         </div>
       </div>
     </section>
-
-    <!-- PC横幅广告2 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e2" data-zoneid="5726874"></ins>
-    </aside>
-
-    <!-- 移动横幅广告2 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e10" data-zoneid="5726910"></ins>
-    </aside>
 
     <!-- 收据区域 -->
     <section class="receipt-section" v-if="gameStore.showReceipt" role="dialog" aria-labelledby="receipt-title"
@@ -126,26 +85,8 @@
       </div>
     </section>
 
-
-    <!-- PC横幅广告3 -->
-    <aside v-if="!isMobile" class="ad-container">
-      <ins class="eas6a97888e2" data-zoneid="5726876"></ins>
-    </aside>
-
-    <!-- 移动横幅广告3 -->
-    <aside v-if="isMobile" class="ad-container">
-      <ins class="eas6a97888e10" data-zoneid="5726912"></ins>
-    </aside>
-
-
     <!-- 热门游戏区域 -->
     <HotGames @select="navigateToGame" />
-
-    <!-- 原生广告-通用 -->
-    <aside class="ad-container">
-      <ins class="eas6a97888e20" data-zoneid="5726896"></ins>
-    </aside>
-
 
     <!-- 钱花完弹窗 -->
     <MoneyExhaustedModal :show="gameStore.showMoneyExhaustedModal"
@@ -264,32 +205,6 @@ const handleScroll = () => {
   isScrolled.value = shouldBeFixed
 }
 
-// 广告配置列表
-const adConfigs = [
-  { selector: '.eas6a97888e2', delay: 0 },    // 头部广告
-  { selector: '.eas6a97888e35', delay: 300 }, // 底部广告
-  { selector: '.eas6a97888e36', delay: 600 }, // 中间广告
-  // 可以继续添加更多广告位
-  // { selector: '.eas6a97888e37', delay: 900 }, // 侧边广告
-  // { selector: '.eas6a97888e38', delay: 1200 }, // 其他位置广告
-]
-
-// 延迟加载多个广告函数
-const loadAdsWithDelay = (baseDelay = 1000) => {
-  setTimeout(() => {
-    if (window.AdProvider) {
-      adConfigs.forEach((config, index) => {
-        setTimeout(() => {
-          const adElement = document.querySelector(config.selector)
-          if (adElement) {
-            console.log(`Loading ad: ${config.selector}`)
-            window.AdProvider.push({ "serve": {} })
-          }
-        }, config.delay)
-      })
-    }
-  }, baseDelay)
-}
 
 // 组件挂载时根据路由设置角色
 onMounted(async () => {
@@ -316,9 +231,6 @@ onMounted(async () => {
 
   // 设置初始SEO
   setCharacterPageSEO()
-
-  // 延迟加载所有广告
-  loadAdsWithDelay(1000)
 })
 
 // 组件卸载时移除滚动监听
