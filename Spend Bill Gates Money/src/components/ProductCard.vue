@@ -153,34 +153,11 @@ const handleSell = () => {
   overflow: hidden;
 }
 
-.product-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #a8edea, #fed6e3, #ffecd2, #fcb69f);
-  background-size: 400% 400%;
-  animation: gradientShift 3s ease infinite;
-}
-
 .product-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 .product-image {
   aspect-ratio: 3/2;
@@ -405,7 +382,7 @@ const handleSell = () => {
 
 @media (max-width: 768px) {
   .product-card {
-    padding: 10px;
+    padding: 5px;
   }
 
   .product-image {
@@ -413,7 +390,7 @@ const handleSell = () => {
   }
 
   .product-name {
-    font-size: 14px;
+    font-size: 12px;
     min-height: auto;
     margin-bottom: 6px;
   }
@@ -422,21 +399,26 @@ const handleSell = () => {
     font-size: 14px;
   }
 
+  .product-info{
+    margin-bottom: 5px;
+  }
+
   .product-controls {
-    gap: 6px;
+    gap: 5px;
+    flex-direction: column;
   }
 
   .control-btn {
-    padding: 6px 8px;
+    padding: 0 8px;
     font-size: 10px;
-    min-width: 40px;
-    height: 32px;
+    width: 100%;
+    height: 25px;
   }
 
   .quantity-input {
-    padding: 4px 12px;
-    font-size: 16px;
-    height: 32px;
+    padding: 5px 12px;
+    font-size: 14px;
+    height: 25px;
   }
 }
 </style> 

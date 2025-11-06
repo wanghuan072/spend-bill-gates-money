@@ -372,8 +372,7 @@ onUnmounted(() => {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin: 0 -24px;
-  padding: 16px 24px;
+  padding: 10px 0;
 }
 
 .balance-container {
@@ -445,7 +444,7 @@ onUnmounted(() => {
   font-size: 14px;
   color: #718096;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -732,10 +731,7 @@ onUnmounted(() => {
   }
 
   .balance-main {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+    
   }
 
   .balance-amount {
@@ -744,11 +740,6 @@ onUnmounted(() => {
 
   .balance-label {
     font-size: 12px;
-  }
-
-  .balance-stats {
-    padding: 10px;
-    gap: 10px;
   }
 
   .stat-label {
@@ -778,8 +769,8 @@ onUnmounted(() => {
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
     margin-top: 20px;
   }
 
@@ -813,7 +804,7 @@ onUnmounted(() => {
 .v-html-content:deep(h2) {
   font-size: 28px;
   font-weight: 800;
-  margin: 32px 0 20px 0;
+  margin-bottom: 20px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -825,7 +816,7 @@ onUnmounted(() => {
 .v-html-content:deep(h3) {
   font-size: 24px;
   font-weight: 700;
-  margin: 28px 0 16px 0;
+  margin-bottom: 16px;
   color: #4a5568;
   position: relative;
   padding-left: 16px;
@@ -846,7 +837,7 @@ onUnmounted(() => {
 .v-html-content:deep(h4) {
   font-size: 20px;
   font-weight: 600;
-  margin: 24px 0 12px 0;
+  margin-bottom: 12px;
   color: #2d3748;
   line-height: 1.4;
 }
@@ -854,20 +845,20 @@ onUnmounted(() => {
 .v-html-content:deep(h5) {
   font-size: 18px;
   font-weight: 600;
-  margin: 20px 0 10px 0;
+  margin-bottom: 10px;
   color: #4a5568;
   line-height: 1.4;
 }
 
 .v-html-content:deep(p) {
-  margin: 16px 0;
+  margin-bottom: 16px;
   line-height: 1.8;
   color: #2d3748;
   font-size: 16px;
 }
 
 .v-html-content:deep(ul) {
-  margin: 20px 0;
+  margin-bottom: 20px;
   padding-left: 24px;
   color: #2d3748;
   list-style: none;
@@ -893,7 +884,7 @@ onUnmounted(() => {
 }
 
 .v-html-content:deep(ol) {
-  margin: 20px 0;
+  margin-bottom: 20px;
   padding-left: 24px;
   color: #2d3748;
   counter-reset: ol-counter;
@@ -901,7 +892,7 @@ onUnmounted(() => {
 
 .v-html-content:deep(ol li) {
   position: relative;
-  margin: 12px 0;
+  margin-bottom: 12px;
   padding-left: 32px;
   line-height: 1.7;
   counter-increment: ol-counter;
@@ -939,7 +930,7 @@ onUnmounted(() => {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -951,7 +942,7 @@ onUnmounted(() => {
 .v-html-content:deep(table) {
   width: 100%;
   border-collapse: collapse;
-  margin: 24px 0;
+  margin-bottom: 24px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -1083,12 +1074,13 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .balance-main {
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 5px;
   }
   
   .balance-stats {
     gap: 15px;
+    padding: 0;
   }
   
   .balance-controls {
@@ -1111,17 +1103,38 @@ onUnmounted(() => {
   .receipt-text {
     font-size: 12px;
   }
+
+  .v-html-content:deep(h2){
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .v-html-content:deep(h3){
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .v-html-content:deep(h4){
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .v-html-content:deep(h5){
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .v-html-content:deep(p){
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .v-html-content:deep(ul){
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .v-html-content:deep(ol){
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
-  .balance-main {
-    gap: 15px;
-  }
-  
-  .balance-stats {
-    gap: 12px;
-  }
-  
   .stat-item {
     padding: 6px 12px;
   }

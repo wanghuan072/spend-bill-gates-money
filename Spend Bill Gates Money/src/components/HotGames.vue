@@ -93,7 +93,6 @@ const selectGame = (addressBar) => {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
-  margin-top: 32px;
 }
 
 .hot-game-item {
@@ -167,7 +166,7 @@ const selectGame = (addressBar) => {
 /* 响应式设计 */
 @media (max-width: 1024px) {
   .hot-games {
-    padding: 30px 0;
+    padding: 10px 0;
     margin-top: 30px;
   }
 
@@ -201,7 +200,7 @@ const selectGame = (addressBar) => {
   }
 
   .hot-games-container {
-    padding: 0 16px;
+    padding: 0 10px;
   }
 
   .hot-games-header {
@@ -217,14 +216,13 @@ const selectGame = (addressBar) => {
   }
 
   .hot-games-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-top: 20px;
   }
 
   .hot-game-title {
     font-size: 12px;
-    padding: 8px 10px;
+    padding: 5px 10px;
   }
 
   .play-text {
