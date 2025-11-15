@@ -135,15 +135,19 @@ Object.values(availableCharacters).forEach(character => {
 
 // 全局路由守卫 - 处理SEO和结构化数据
 router.beforeEach((to, from, next) => {
+  // 生成canonical URL
+  const baseUrl = 'https://spendgatesmoney.com'
+  const canonicalUrl = `${baseUrl}${to.path}`
+  
   // 设置基础SEO
   if (to.meta) {
     setPageSEO({
       title: to.meta.title,
       description: to.meta.description,
       keywords: to.meta.keywords
-    })
+    }, canonicalUrl)
   } else {
-    resetToDefaultSEO()
+    resetToDefaultSEO(canonicalUrl)
   }
 
   // 插入基础结构化数据

@@ -230,15 +230,23 @@ const setCharacterPageSEO = () => {
     return
   }
 
+  // 生成canonical URL
+  const baseUrl = 'https://spendgatesmoney.com'
+  const canonicalUrl = `${baseUrl}${route.path}`
+
   // 如果是首页（Bill Gates），使用默认SEO
   if (route.path === '/') {
     if (currentCharacter.seo) {
-      setPageSEO(currentCharacter.seo)
+      setPageSEO(currentCharacter.seo, canonicalUrl)
+    } else {
+      setPageSEO({}, canonicalUrl)
     }
   } else {
     // 其他角色页面，使用角色特定的SEO
     if (currentCharacter.seo) {
-      setPageSEO(currentCharacter.seo)
+      setPageSEO(currentCharacter.seo, canonicalUrl)
+    } else {
+      setPageSEO({}, canonicalUrl)
     }
   }
 

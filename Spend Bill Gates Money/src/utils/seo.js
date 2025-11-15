@@ -148,7 +148,8 @@ export function setGameDetailPageSEO(game) {
 
 /**
  * 重置为默认TDK
+ * @param {string} canonicalUrl - 规范URL（可选）
  */
-export function resetToDefaultSEO() {
-  setPageSEO(defaultSEO)
+export function resetToDefaultSEO(canonicalUrl = null) {
+  setPageSEO(defaultSEO, canonicalUrl)
 } 
