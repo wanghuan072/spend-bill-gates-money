@@ -1,7 +1,14 @@
 <template>
   <article class="product-card" role="article">
     <div class="product-image">
-      <img :src="product.image" :alt="`${product.name} product image`" />
+      <img 
+        ref="imageRef"
+        :data-src="product.image" 
+        :src="IMAGE_PLACEHOLDER"
+        :alt="`${product.name} product image`" 
+        class="lazy-image"
+        loading="lazy"
+      />
       <div class="image-overlay" aria-hidden="true"></div>
     </div>
 
@@ -55,8 +62,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useGameStore } from '../stores/gameStore'
+import { useLazyImage } from '../utils/useLazyLoad.js'
+import { IMAGE_PLACEHOLDER } from '../utils/constants.js'
 
 const props = defineProps({
   product: {
@@ -67,6 +76,22 @@ const props = defineProps({
 
 const gameStore = useGameStore()
 const quantity = computed(() => gameStore.getProductQuantity(props.product.id))
+
+// 图片懒加载
+const imageRef = ref(null)
+const { observe, unobserve } = useLazyImage('50px')
+
+onMounted(() => {
+  if (imageRef.value) {
+    observe(imageRef.value)
+  }
+})
+
+onUnmounted(() => {
+  if (imageRef.value) {
+    unobserve(imageRef.value)
+  }
+})
 
 const canAfford = computed(() => {
   const totalCost = props.product.price * 1 // 每次只购买1个
@@ -172,7 +197,16 @@ const handleSell = () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-image img.lazy-image {
+  opacity: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.product-image img.lazy-image.loaded {
+  opacity: 1;
 }
 
 .product-card:hover .product-image img {

@@ -65,19 +65,34 @@
   <link rel="preload" href="/src/main.js" as="script">
   <link rel="preload" href="/src/App.vue" as="fetch" crossorigin>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RW96WM7YF5"></script>
+
+  <!-- 延迟加载第三方脚本 -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        // Google tag (gtag.js)
+        const gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.defer = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RW96WM7YF5';
+        document.head.appendChild(gtagScript);
 
-    gtag('config', 'G-RW96WM7YF5');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-RW96WM7YF5');
+
+
+        // Google AdSense
+        const adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.defer = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2596253057392425';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      }, 3000);
+    });
   </script>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2596253057392425"
-    crossorigin="anonymous"></script>
 
   <!-- Critical CSS inline -->
   <style>

@@ -14,7 +14,13 @@
           @click="selectGame(game.addressBar)"
         >
           <div class="hot-game-image">
-            <img :src="game.imageUrl" :alt="game.imageAlt" />
+            <img 
+              :data-src="game.imageUrl" 
+              :src="IMAGE_PLACEHOLDER"
+              :alt="game.imageAlt" 
+              class="lazy-image"
+              loading="lazy"
+            />
             <div class="hot-game-overlay">
               <span class="play-text">Play Game</span>
             </div>
@@ -27,7 +33,10 @@
 </template>
 
 <script setup>
+import { ref, onMounted, nextTick } from 'vue'
 import { games } from '../data/games.js'
+import { useLazyImage } from '../utils/useLazyLoad.js'
+import { IMAGE_PLACEHOLDER } from '../utils/constants.js'
 
 const props = defineProps({
   excludeAddressBar: {
@@ -49,6 +58,19 @@ const hotGames = getHotGames().filter((game) => game.addressBar !== props.exclud
 const selectGame = (addressBar) => {
   emit('select', addressBar)
 }
+
+// 图片懒加载
+const { observe } = useLazyImage('50px')
+
+onMounted(() => {
+  // 观察所有热门游戏图片
+  nextTick(() => {
+    const images = document.querySelectorAll('.hot-game-image img.lazy-image')
+    images.forEach((img) => {
+      observe(img)
+    })
+  })
+})
 </script>
 
 <style scoped>
@@ -120,7 +142,16 @@ const selectGame = (addressBar) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hot-game-image img.lazy-image {
+  opacity: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.hot-game-image img.lazy-image.loaded {
+  opacity: 1;
 }
 
 .hot-game-item:hover .hot-game-image img {

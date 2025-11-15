@@ -44,11 +44,7 @@ import { games } from '../data/games.js'
 const router = useRouter()
 
 // 获取所有游戏
-const getAllGames = () => {
-  return games
-}
-
-const gamesList = getAllGames()
+const gamesList = games
 
 const navigateToGame = (addressBar) => {
   router.push(`/games/${addressBar}`)

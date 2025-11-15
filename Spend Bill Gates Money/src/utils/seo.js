@@ -116,22 +116,6 @@ function setCanonicalUrl(url) {
 }
 
 /**
- * 从路由meta中获取SEO信息
- * @param {Object} route - Vue路由对象
- * @returns {Object} SEO对象
- */
-export function getSEOFromRoute(route) {
-  if (route.meta) {
-    return {
-      title: route.meta.title,
-      description: route.meta.description,
-      keywords: route.meta.keywords
-    }
-  }
-  return null
-}
-
-/**
  * 为游戏详情页面设置动态TDK
  * @param {Object} game - 游戏对象
  */

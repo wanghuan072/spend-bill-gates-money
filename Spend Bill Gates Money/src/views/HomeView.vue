@@ -62,8 +62,23 @@
           <p class="section-subtitle">Choose from luxury items to philanthropic causes</p>
         </div>
         <div class="products-grid" role="list" aria-label="Available products">
-          <ProductCard v-for="product in gameStore.currentProducts" :key="product.id" :product="product"
-            role="listitem" />
+          <ProductCard 
+            v-for="product in visibleProducts" 
+            :key="product.id" 
+            :product="product"
+            role="listitem" 
+          />
+        </div>
+        <!-- 加载更多触发点 -->
+        <div ref="loadMoreTrigger" class="load-more-trigger" v-if="hasMoreProducts">
+          <div class="loading-spinner" v-if="isLoadingMore">
+            <span class="spinner"></span>
+            <span>Loading more items...</span>
+          </div>
+        </div>
+        <!-- 已加载所有商品提示 -->
+        <div class="all-loaded" v-if="!hasMoreProducts && visibleProducts.length > 0">
+          <p>All {{ gameStore.currentProducts.length }} items loaded</p>
         </div>
       </div>
     </section>
@@ -102,10 +117,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref, onUnmounted, watch, nextTick } from 'vue'
+import { onMounted, ref, onUnmounted, watch, nextTick, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useGameStore } from '../stores/gameStore'
-import { availableCharacters, gameConfig } from '../data/config.js'
 import Header from '../components/Header.vue'
 import ProductCard from '../components/ProductCard.vue'
 import ReceiptTable from '../components/ReceiptTable.vue'
@@ -118,6 +132,7 @@ import {
   generateOrganizationSchema,
   generateWebsiteSchema,
 } from '../utils/structuredData.js'
+import { useLazyElement } from '../utils/useLazyLoad.js'
 
 import { useDeviceDetection } from '@/utils/useDeviceDetection.js'
 
@@ -127,6 +142,57 @@ const router = useRouter()
 const route = useRoute()
 const gameStore = useGameStore()
 const isScrolled = ref(false)
+
+// 商品列表分页/懒加载
+const itemsPerPage = computed(() => isMobile.value ? 12 : 24) // 移动端12个，桌面端24个
+const visibleCount = ref(itemsPerPage.value)
+const isLoadingMore = ref(false)
+const loadMoreTrigger = ref(null)
+
+// 计算可见的商品
+const visibleProducts = computed(() => {
+  return gameStore.currentProducts.slice(0, visibleCount.value)
+})
+
+// 是否还有更多商品
+const hasMoreProducts = computed(() => {
+  return visibleCount.value < gameStore.currentProducts.length
+})
+
+// 加载更多商品
+const loadMore = () => {
+  if (isLoadingMore.value || !hasMoreProducts.value) return
+  
+  isLoadingMore.value = true
+  
+  // 使用 requestAnimationFrame 优化加载体验
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      visibleCount.value = Math.min(
+        visibleCount.value + itemsPerPage.value,
+        gameStore.currentProducts.length
+      )
+      isLoadingMore.value = false
+    }, 100) // 小延迟让用户看到加载状态
+  })
+}
+
+// 监听加载更多触发点
+const { isVisible: isTriggerVisible, observe: observeTrigger } = useLazyElement('200px')
+
+watch(isTriggerVisible, (visible) => {
+  if (visible && hasMoreProducts.value && !isLoadingMore.value) {
+    loadMore()
+  }
+})
+
+// 监听角色变化，重置可见数量
+watch(
+  () => gameStore.currentCharacter,
+  () => {
+    visibleCount.value = itemsPerPage.value
+  }
+)
 
 // 从store获取状态和方法
 const { toggleReceipt, resetGame } = gameStore
@@ -161,7 +227,6 @@ const setCharacterPageSEO = () => {
 
   // 检查 currentCharacter 是否存在
   if (!currentCharacter) {
-    console.log('setCharacterPageSEO: currentCharacter is null, skipping SEO setup')
     return
   }
 
@@ -201,7 +266,6 @@ const handleScroll = () => {
   // 最简单的逻辑：当滚动超过300px时固定
   const shouldBeFixed = scrollTop > 300
 
-  // console.log('Scroll:', scrollTop, 'Fixed:', shouldBeFixed)
   isScrolled.value = shouldBeFixed
 }
 
@@ -231,6 +295,12 @@ onMounted(async () => {
 
   // 设置初始SEO
   setCharacterPageSEO()
+
+  // 等待 DOM 更新后开始观察加载更多触发点
+  await nextTick()
+  if (loadMoreTrigger.value) {
+    observeTrigger(loadMoreTrigger.value)
+  }
 })
 
 // 组件卸载时移除滚动监听
@@ -562,6 +632,48 @@ onUnmounted(() => {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 32px;
+}
+
+/* 加载更多相关样式 */
+.load-more-trigger {
+  margin-top: 40px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(102, 126, 234, 0.2);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.all-loaded {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* 收据区域 */

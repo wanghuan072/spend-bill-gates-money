@@ -5,7 +5,6 @@ export function useDeviceDetection() {
 
   const checkDeviceType = () => {
     isMobile.value = window.matchMedia('(max-width: 767px)').matches
-    console.log('设备检测:', isMobile.value ? '移动设备' : '桌面设备')
   }
 
   // 立即检测设备类型
@@ -22,7 +21,6 @@ export function useDeviceDetection() {
   })
 
   return {
-    isMobile,
-    checkDeviceType
+    isMobile
   }
 }
