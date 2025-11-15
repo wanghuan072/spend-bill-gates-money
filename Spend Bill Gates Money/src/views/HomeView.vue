@@ -730,10 +730,6 @@ onUnmounted(() => {
     padding: 10px;
   }
 
-  .balance-main {
-    
-  }
-
   .balance-amount {
     font-size: 20px;
   }

@@ -1358,5 +1358,116 @@ export const games = [
         },
         addressBar: "hoop-legends",
         detailsHtml: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;"><h2>Hoop Legends</h2><p>Get ready to experience the next generation of arcade basketball with Hoop Legends! Forget complex passing plays and defensive strategies; this game is all about pure, unadulterated scoring action.  With its stunning 3D graphics, intuitive controls, and a wealth of customization options, Hoop Legends delivers an addictive and exhilarating basketball experience unlike any other.  Prepare to become a true hoop legend!</p><h3>About</h3><p>Hoop Legends is a fast-paced, action-packed 3D basketball game designed for players of all skill levels.  The focus is squarely on scoring – mastering the art of the perfect shot and racking up points. The game boasts highly realistic visuals, smooth animations that make every swish satisfying, and intuitive controls that allow you to quickly get into the action.  Beyond the core gameplay, Hoop Legends offers extensive customization options, allowing you to personalize your player with unique uniforms and basketball skins, and unlock new courts to conquer.  Compete against the clock in various game modes, showcasing your skills and rising to the top of the leaderboards.  Whether you’re a casual player or a seasoned basketball enthusiast, Hoop Legends offers a uniquely engaging and rewarding experience.</p><h3>Features</h3><ul><li><b>Stunning 3D Graphics and Realistic Physics:</b> Experience incredibly lifelike basketball action with smooth animations and realistic ball physics.  Every shot feels authentic and rewarding, immersing you in the thrill of the game.  This attention to detail sets Hoop Legends apart, offering unparalleled visual fidelity for a mobile basketball game.</li><li><b>Intuitive and Easy-to-Learn Controls:</b>  Master the art of the perfect shot with simple swipe controls.  No complicated button combinations or tutorials needed; jump straight into the action and start scoring!</li><li><b>Multiple Game Modes:</b>  Challenge yourself with a variety of game modes, including time-based challenges that test your accuracy and speed, and competitive modes that let you go head-to-head against others.</li><li><b>Extensive Customization Options:</b>  Personalize your experience with a wide range of customizable items. Unlock and equip new basketball skins, sporting various colors and designs, choose from a selection of unique uniforms, and dominate new courts with unique environments and challenges.</li><li><b>Unlockable Content and Progression:</b> Earn in-game currency (MP) to unlock new basketballs, courts, and uniforms. Some unlockables even offer small performance boosts, giving you an edge over the competition and encouraging continued play.</li><li><b>Addictive and Replayable Gameplay:</b> The simple yet engaging gameplay loop makes Hoop Legends incredibly replayable. The constant pursuit of higher scores and the unlocking of new content keeps you coming back for more.  Become a true hoop legend!</li><li><b>Regular Updates and New Content:</b>  Expect ongoing support with regular updates that introduce new challenges, game modes, and customization options to keep the game fresh and exciting. This ensures Hoop Legends remains a constantly evolving and captivating basketball experience.</li></ul><h3>FAQ</h3><ul><li><div class="faq-question">How do I play Hoop Legends?</div><div class="faq-answer">Simply select a game mode, aim your shot by dragging your mouse, and release to throw the ball towards the basket. Points are awarded for successful shots.</div></li><li><div class="faq-question">What can I unlock with MP?</div><div class="faq-answer">You can unlock new basketballs with unique designs, various courts offering different challenges, and exciting new uniforms to customize your player’s appearance.</div></li><li><div class="faq-question">Are there any competitive elements in Hoop Legends?</div><div class="faq-answer">Yes, several game modes encourage competition, either against the clock or against other players for high scores on the leaderboards.</div></li><li><div class="faq-question">How do I improve my score?</div><div class="faq-answer">Practice your aim and timing to achieve perfect shots consistently.  Unlocking new basketballs and courts can also provide slight performance boosts to help you achieve higher scores.</div></li><li><div class="faq-question">Is Hoop Legends available on mobile?</div><div class="faq-answer">While currently playable on AZgames.io, future mobile versions are under consideration. Stay tuned for updates!</div></li></ul><p>Hoop Legends offers a fresh and exciting take on the basketball game genre. Its emphasis on pure scoring action, combined with its stunning visuals and extensive customization options, ensures hours of addictive gameplay.  Become a hoop legend – the court awaits!</p></div>`,
+    },
+    {
+      id: 45,
+      title: "Speed Shooter",
+      iframeUrl: "https://1games.io/game/speed-shooter/",
+      description: "Outsmart pursuers in Speed Shooter, a high-speed action game where you play as a pro assassin! Calculate tactics, aim accurately, and use every bullet wisely to eliminate the enemy base before time runs out. Sharpen your marksmanship and escape tricky situations!",
+      isHot: true,
+      publishDate: "2025-11-15",
+      imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1763104156/cms-uploads/cms-1763104156199-93735628.png",
+      imageAlt: "A professional assassin engaging in high-speed shooter action.",
+      seo: {
+        title: "Speed Shooter - Fast-Paced Action Game Online",
+        description: "Become a pro assassin in Speed Shooter! Wipe out the enemy base within a limited time. Sharpen your marksmanship skills and escape tricky situations in this fast-paced shooting game.",
+        keywords: "speed shooter, action game, assassin game, shooting game, tactical shooter, online game, fast-paced action, marksmanship skills",
+      },
+      addressBar: "speed-shooter",
+      detailsHtml: `<div>
+      <h2>Speed Shooter: A High-Octane Assassin Experience</h2>
+      <p>Dive into the adrenaline-pumping world of Speed Shooter, where split-second decisions and pinpoint accuracy are your only allies. As a highly skilled assassin, your mission is clear: infiltrate and eliminate the enemy base before time runs out. But be warned, hesitation is your worst enemy. Sharpen your reflexes, master your weapon, and prepare for a relentless test of skill and strategy.</p>
+    
+      <h3>Fast-Paced Shooting Gameplay: Time is Ticking!</h3>
+      <p>Speed Shooter throws you headfirst into intense, time-sensitive scenarios. From the moment you spot an enemy, the clock starts ticking, demanding immediate and decisive action. There's no room for error; you must quickly analyze the situation, locate your targets, and take them down with ruthless efficiency. Every second counts, and every bullet must find its mark.</p>
+    
+      <h3>Tactical Skills are Paramount: More Than Just a Shooter</h3>
+      <p>This isn't just about pulling the trigger; Speed Shooter demands strategic thinking and tactical prowess. Insufficient time management leads to mission failure and capture. As the difficulty escalates, the game's tempo accelerates, pushing you to constantly refine your reflexes and sharpen your combat mindset. Adapt, improvise, and overcome to survive the ever-increasing challenges that await.</p>
+    
+      <h3>Mastering the Controls: Precision and Agility</h3>
+      <p>Familiarize yourself with these essential controls to maximize your effectiveness and dominate the battlefield:</p>
+      <ul>
+        <li><strong>WASD:</strong> Master agile movement to dodge incoming fire and secure the ideal vantage point.</li>
+        <li><strong>Left Mouse Button:</strong> Aim with unwavering precision and unleash lethal shots without hesitation.</li>
+        <li><strong>Right Mouse Button:</strong> Interact with your surroundings to unlock hidden opportunities and gain a tactical advantage.</li>
+        <li><strong>Spacebar:</strong> Seamlessly transition to the next level upon successful mission completion.</li>
+        <li><strong>R:</strong> Immediately restart the level after failure – perseverance is key to victory.</li>
+      </ul>
+    
+      <h3>Unleash Your Marksmanship: Become the Ultimate Assassin</h3>
+      <p>Speed Shooter is a relentless test of skill, strategy, and lightning-fast reflexes. Can you handle the pressure and emerge victorious? Grab your weapon, focus your mind, and prove that you have what it takes to be the ultimate speed shooter!</p>
+    
+      <h3>FAQ: Your Questions Answered</h3>
+      <ol>
+        <li><strong>What is the main objective of Speed Shooter?</strong><br>The main objective is to wipe out the enemy base within a limited time frame by eliminating all targets efficiently and accurately.</li>
+        <li><strong>What happens if I run out of time?</strong><br>If you fail to complete the mission before time runs out, the enemy will catch you, and you will have to replay the level.</li>
+        <li><strong>How does the game difficulty increase?</strong><br>The game difficulty increases with each level, making the match speed faster and faster, forcing you to continuously improve your reflexes and fighting mindset.</li>
+        <li><strong>Are there any tactical elements in the game?</strong><br>Yes, Speed Shooter requires extremely high tactical skills. You need to calculate your moves quickly and make the most of every bullet to survive.</li>
+        <li><strong>What are the key controls in Speed Shooter?</strong><br>The key controls are: WASD for movement, Left Mouse for aiming and shooting, Right Click for interacting with the environment, Spacebar for switching levels, and R for restarting the level.</li>
+        <li><strong>Is there room for error in Speed Shooter?</strong><br>No, there's no room for error. You have to calculate your tactics quickly, aim accurately, and make the most of every bullet to survive. Every shot needs to be agility; otherwise, failure is certain!</li>
+      </ol>
+    
+      <p>Step into the high-stakes world of Speed Shooter, where every second counts and only the sharpest assassins survive. Are you ready to test your limits and prove your marksmanship skills? The challenge awaits!</p>
+    </div>`,
+    },
+
+    {
+      id: 46,
+      title: "Rebound Shooter",
+      iframeUrl: "https://1games.io/game/rebound-shooter/",
+      description: "Unleash your inner sharpshooter in Rebound Shooter! Eliminate hordes of undead using cunning ricochets and limited ammo. A challenging puzzle shooting game where every shot counts. Clear levels with style and prove your marksmanship across four eerie lands!",
+      isHot: false,
+      publishDate: "2025-11-16",
+      imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1763103103/cms-uploads/cms-1763103103604-20953343.png",
+      imageAlt: "Rebound Shooter gameplay image featuring zombies and ricocheting bullets.",
+      seo: {
+        title: "Rebound Shooter - Puzzle Shooting Game - Eliminate Zombies!",
+        description: "Test your aiming skills in Rebound Shooter! Use ricochets to eliminate undead hordes across four stages. A challenging and addictive puzzle shooter game!",
+        keywords: "rebound shooter, puzzle game, zombie game, shooting game, ricochet, strategy game, undead, sniper skills",
+      },
+      addressBar: "rebound-shooter",
+      detailsHtml: `<div>
+      <h2>Rebound Shooter: Outsmart the Undead</h2>
+      <p>Step into the grim world of Rebound Shooter, where hordes of zombies have overrun the land. As a veteran shooter, you're humanity's last hope. Armed with limited ammo and a sharp mind, you'll need to master the art of ricochet to survive. Prepare for a challenging puzzle shooting experience that tests your precision, strategy, and nerves.</p>
+    
+      <h3>Precision Shooting Gameplay</h3>
+      <p>Rebound Shooter is more than just pointing and shooting. It's about calculating angles, predicting bullet paths, and making every shot count. With limited ammunition, you'll need to use your wits and aiming skills to eliminate every last zombie. The game's physics system allows for complex ricochets, letting you bounce bullets off walls to hit targets in hard-to-reach places. Can you take them all down with just a few bullets?</p>
+    
+      <h3>Epic Adventure Through Four Stages</h3>
+      <p>Your journey will take you through four distinct and dangerous environments, each teeming with undead. Navigate a desolate forest, a ruined city, a creepy junkyard, and a gruesome cemetery. Each stage presents unique challenges and requires you to adapt your strategy to the surroundings. The zombie hordes are relentless, and you'll need all your skills to survive.</p>
+    
+      <h3>Gameplay Overview: Master the Rebound</h3>
+      <p>Each stage is composed of 30 increasingly difficult levels designed to test your puzzle-solving and marksmanship abilities. To progress, you must eliminate all zombies within the stage, using your limited ammo effectively. The fewer bullets you use, the higher your score and the more stars you earn! Exploit the physics system by shooting bullets at walls, creating reflection angles to hit targets from a distance or those hidden from direct fire. Be creative! A single, well-placed bullet can trigger a chain reaction, wiping out entire groups of zombies in a spectacular explosion!</p>
+    
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Challenging Puzzle Gameplay:</strong> Each level requires careful planning and precise aiming.</li>
+        <li><strong>Realistic Physics:</strong> Use ricochets and angles to your advantage.</li>
+        <li><strong>Four Unique Stages:</strong> Explore a desolate forest, a dead city, a ruined junkyard, and a creepy cemetery.</li>
+        <li><strong>30 Levels Per Stage:</strong> Test your skills across a total of 120 levels.</li>
+        <li><strong>Limited Ammo:</strong> Make every shot count!</li>
+      </ul>
+    
+      <h3>Tips for Success</h3>
+      <ol>
+        <li><strong>Analyze the Level:</strong> Before firing, take a moment to survey the level and identify potential ricochet points and zombie positions.</li>
+        <li><strong>Experiment with Angles:</strong> Don't be afraid to try unconventional angles. Sometimes, the most unexpected shot is the most effective.</li>
+        <li><strong>Conserve Ammo:</strong> Every bullet matters. Avoid unnecessary shots and aim for maximum impact.</li>
+        <li><strong>Use Obstacles to Your Advantage:</strong> Zombies often hide behind obstacles. Use ricochets to bypass these obstacles and eliminate your targets.</li>
+        <li><strong>Chain Reactions:</strong> Look for opportunities to create chain reactions by hitting explosive barrels or other environmental hazards.</li>
+      </ol>
+    
+      <h3>FAQ</h3>
+      <ol>
+        <li><strong>What is Rebound Shooter?</strong><br>Rebound Shooter is a challenging puzzle shooting game where you use ricochets to eliminate waves of the undead.</li>
+        <li><strong>How many stages are there in Rebound Shooter?</strong><br>There are four stages in the game: a desolate forest, a dead city, a ruined junkyard, and a creepy cemetery.</li>
+        <li><strong>How many levels are in each stage?</strong><br>Each stage consists of 30 challenging levels.</li>
+        <li><strong>What is the key gameplay mechanic?</strong><br>The key mechanic is using reflection angles to attack zombies from a distance or in hard-to-reach places.</li>
+        <li><strong>What happens if I run out of ammo?</strong><br>With limited ammo, each shot needs to be carefully calculated for maximum effectiveness. You must restart the level if you run out before eliminating all zombies.</li>
+        <li><strong>How do I get a higher score?</strong><br>The fewer bullets you use to complete a stage, the higher your score and the more stars you will earn.</li>
+      </ol>
+    
+      <p>Are you ready to face the undead and prove your marksmanship? Download Rebound Shooter now and embark on an epic adventure filled with challenging puzzles, strategic shooting, and hordes of relentless zombies. Sharpen your aim, calculate your angles, and prepare for the ultimate rebound challenge!</p>
+    </div>`,
     }
 ]
