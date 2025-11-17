@@ -169,7 +169,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import Header from '../components/Header.vue'
 import HotGames from '../components/HotGames.vue'
 import Footer from '../components/Footer.vue'
@@ -179,7 +179,6 @@ import { setGameDetailPageSEO } from '../utils/seo.js'
 import { insertStructuredData, generateGameSchema } from '../utils/structuredData.js'
 
 const route = useRoute()
-const router = useRouter()
 const commentStore = useCommentStore()
 
 const loading = ref(true)
@@ -368,12 +367,14 @@ function exitPageFullscreen() {
   document.body.style.overflow = 'auto'
 }
 
+// 导航到游戏详情页 - 使用完整页面刷新
 const navigateToGame = (addressBar) => {
-  router.push(`/games/${addressBar}`)
+  window.location.href = `/games/${addressBar}`
 }
 
+// 返回游戏列表 - 使用完整页面刷新
 const goBack = () => {
-  router.push('/games')
+  window.location.href = '/games'
 }
 
 // 监听游戏变化，设置SEO和加载数据

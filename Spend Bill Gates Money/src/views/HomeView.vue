@@ -197,9 +197,9 @@ watch(
 // 从store获取状态和方法
 const { toggleReceipt, resetGame } = gameStore
 
-// 导航到游戏详情页
+// 导航到游戏详情页 - 使用完整页面刷新
 const navigateToGame = (addressBar) => {
-  router.push(`/games/${addressBar}`)
+  window.location.href = `/games/${addressBar}`
 }
 
 // 关闭收据

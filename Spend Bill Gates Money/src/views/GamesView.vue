@@ -35,19 +35,17 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
 import GameCard from '../components/GameCard.vue'
 import Footer from '../components/Footer.vue'
 import { games } from '../data/games.js'
 
-const router = useRouter()
-
 // 获取所有游戏
 const gamesList = games
 
+// 导航到游戏详情页 - 使用完整页面刷新
 const navigateToGame = (addressBar) => {
-  router.push(`/games/${addressBar}`)
+  window.location.href = `/games/${addressBar}`
 }
 </script>
 
