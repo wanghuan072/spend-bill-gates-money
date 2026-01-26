@@ -1469,5 +1469,123 @@ export const games = [
     
       <p>Are you ready to face the undead and prove your marksmanship? Download Rebound Shooter now and embark on an epic adventure filled with challenging puzzles, strategic shooting, and hordes of relentless zombies. Sharpen your aim, calculate your angles, and prepare for the ultimate rebound challenge!</p>
     </div>`,
+    },
+
+    {
+      id: 47,
+      title: "Subway Surfers",
+      iframeUrl: "https://azgames.io/subway-surfers.embed",
+      description: "Outrun the Inspector and his dog in Subway Surfers! Grind those train tracks as Jake, dodging obstacles and collecting power-ups. Jump, roll, and fly your way to high scores! Daily tasks, rewards, and near-misses await. Can you conquer the subway?",
+      publishDate: "2026-01-26",
+      isHot: false,
+      imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1763352328/cms-uploads/cms-1763352328046-986731696.png",
+      imageAlt: "Subway Surfers game interface featuring Jake running on train tracks.",
+      seo: {
+        title: "Subway Surfers - Run, Dodge & Surf the Rails! - Play Free Online",
+        description: "Escape the grumpy Inspector in Subway Surfers! An exhilarating endless running adventure on train tracks. Collect coins, power-ups, and unlock cool items!",
+        keywords: "subway surfers, endless runner, train tracks, obstacle course, mobile game, jump, roll, power-ups, coins, inspector, jake",
+      },
+      addressBar: "subway-surfers",
+      detailsHtml: `<div>
+      <h2>Subway Surfers: The Ultimate Endless Rail Adventure</h2>
+      <p>Get ready for a thrilling chase! In Subway Surfers, you embody Jake, the rebellious street artist dodging the relentless Inspector and his canine companion through a vibrant urban sprawl. This isn't just about running; it's about style, skill, and outsmarting the authorities. Experience the adrenaline rush as you navigate treacherous train tracks, dodging obstacles, and collecting valuable bonuses along the way.</p>
+      
+      <h3>How to Play: Mastering the Art of the Run</h3>
+      <p>Subway Surfers is intuitive yet challenging. As Jake, your mission is to stay one step ahead of the Inspector. Use your reflexes to jump over barriers, slide under obstacles, and weave through oncoming trains. Every near miss is a victory, and every coin collected brings you closer to unlocking new gear and powerful upgrades.</p>
+      <p>The heart-pounding action takes place on dynamically shifting train tracks, demanding lightning-fast decisions and precise movements. Collect those shiny coins, because they're your ticket to cool upgrades and stylish new characters.</p>
+    
+      <h3>Game Controls: Your Key to Subway Supremacy</h3>
+      <p>Here's the breakdown of the controls you'll need to master:</p>
+      <ul>
+        <li><strong>Up arrow/W key:</strong> Unleash a jump to vault over low-lying obstacles.</li>
+        <li><strong>Down arrow/S key:</strong> Execute a stylish roll to slide under high barriers.</li>
+        <li><strong>Right arrow/D key:</strong> Swiftly move right to avoid collisions and grab power-ups.</li>
+        <li><strong>Left arrow/A key:</strong> Seamlessly shift left to evade danger and collect coins.</li>
+      </ul>
+    
+      <h3>Power-Ups: Elevate Your Game</h3>
+      <p>Subway Surfers is packed with power-ups designed to give you the edge. Use them wisely to maximize your score and extend your run:</p>
+      <ul>
+        <li><strong>Jetpack:</strong> Soar through the sky, collecting coins and avoiding ground-based obstacles.</li>
+        <li><strong>Coin Magnet:</strong> Attract coins from all directions, effortlessly boosting your wealth.</li>
+        <li><strong>2x Multiplier:</strong> Double your score for a limited time, allowing you to climb the leaderboards faster.</li>
+        <li><strong>Super Sneakers:</strong> Jump higher and further, navigating obstacles with ease.</li>
+      </ul>
+    
+      <h3>Tips and Tricks for Subway Surfing Pros</h3>
+      <ol>
+        <li><strong>Maximize Power-Ups:</strong> Strategically activate power-ups to gain a significant advantage. A well-timed jetpack can be a game-changer!</li>
+        <li><strong>Daily Challenges:</strong> Complete daily tasks to earn valuable rewards, including coins and special items.</li>
+        <li><strong>Choose Your Path Wisely:</strong> Opt for the less risky routes, especially when starting. Staying in the middle of the tracks can minimize unexpected obstacles.</li>
+        <li><strong>Stay Focused:</strong> Maintain 100% concentration to react quickly to sudden challenges. Distractions can be costly!</li>
+        <li><strong>Practice Makes Perfect:</strong> The more you play, the better you'll become at anticipating obstacles and executing precise maneuvers.</li>
+      </ol>
+    
+      <h3>FAQ</h3>
+      <ol>
+        <li><strong>What is Subway Surfers about?</strong><br>Subway Surfers is an endless running game where you play as Jake, escaping the Inspector and his dog by running on train tracks, dodging obstacles, and collecting coins.</li>
+        <li><strong>How do I control Jake in Subway Surfers?</strong><br>Use the Up arrow/W key to jump, Down arrow/S key to scroll, Right arrow/D key to move right, and Left arrow/A key to move left.</li>
+        <li><strong>What are the different power-ups in Subway Surfers?</strong><br>The power-ups include the Jetpack for flying, Coin Magnet for attracting coins, 2x Multiplier for doubling your score, and Super Sneakers for higher jumps.</li>
+        <li><strong>Why should I complete daily tasks in Subway Surfers?</strong><br>Completing daily tasks rewards you with attractive bonuses like coins and special items that enhance your gameplay.</li>
+        <li><strong>What is the best strategy for avoiding obstacles?</strong><br>Try to stay in the middle of the tracks where there are fewer immediate dangers. Focus and react quickly to the unexpected.</li>
+        <li><strong>How do I get better at Subway Surfers?</strong><br>Consistent practice is key! Play regularly to accumulate experience, learn the track layouts, and improve your reflexes.</li>
+      </ol>
+    
+      <p>So, are you ready to hop on the tracks and become the ultimate Subway Surfer? Sharpen your reflexes, master the power-ups, and prepare for a relentless chase through a vibrant urban landscape!</p>
+    </div>`,
+    },
+
+    {
+      id: 48,
+      title: "Dancing Beat",
+      iframeUrl: "https://gamea.azgame.io/dancing-beat/",
+      description: "Immerse yourself in Dancing Beat, where rhythm meets reflexes! Guide your ball through vibrant, ever-changing musical mazes. One-click control, endless replay value, and addictive gameplay await. Can you stay in tune with the beat?",
+      publishDate: "2026-01-26",
+      isHot: false,
+      imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1763953511/cms-uploads/cms-1763953510885-223589493.png",
+      imageAlt: "A vibrant and colorful screenshot from the rhythm arcade game Dancing Beat, featuring a ball navigating a twisting, musical path.",
+      seo: {
+        title: "Dancing Beat - Rhythm Arcade Game | Stay In Tune!",
+        description: "Dash to the beat in Dancing Beat! A musical arcade journey where sound and reflexes collide. Click to navigate dazzling worlds and test your rhythmic skills. Play now!",
+        keywords: "dancing, beat, rhythm game, arcade game, music, reflexes, one-click control, addictive, challenges",
+      },
+      addressBar: "dancing-beat",
+      detailsHtml: `<div>
+      <h2>Dancing Beat: Feel the Rhythm, Master the Maze</h2>
+      <p>Get ready to embark on a musical adventure like no other! Dancing Beat is a captivating arcade game where your reflexes and sense of rhythm are put to the ultimate test. Guide your ball through a dynamic, ever-evolving maze that builds itself in real-time, all perfectly synchronized with the pulsating beat of the music. From serene beginnings to heart-pounding finales, each stage offers a unique and exhilarating melody-driven challenge.</p>
+    
+      <h3>Gameplay: A Symphony of Clicks</h3>
+      <p>In Dancing Beat, each level unfolds before your eyes, creating a mesmerizing maze of vibrant paths that twist, turn, and shift with every note of the soundtrack. Your mission is simple: keep the ball aligned with the music's rhythm while deftly avoiding sharp turns, barriers, and rhythm traps that appear in perfect sync with the beat. Precision timing is key – click precisely when the ball reaches a corner or edge to change direction safely. A single missed beat will send your ball crashing, instantly restarting the level and forcing you to try again.</p>
+    
+      <h3>Experience the Musical Evolution</h3>
+      <p>As the music progresses, the patterns become progressively more challenging. Expect faster sequences, tighter turns, and intricate rhythm breaks that demand exceptional coordination and awareness. Some stages even conceal hidden pathways and devious rhythm traps, requiring quick recognition of upcoming cues. With each click, you'll feel like you're becoming an integral part of the song, transforming pure timing into a captivating musical performance. The entire experience hinges on precision, rhythm, and instinct, all working together in perfect harmony.</p>
+    
+      <h3>Simple Control, Total Immersion</h3>
+      <p>Dancing Beat offers incredibly intuitive one-click control. Simply click the screen at the precise moment to guide your ball through every twist and turn. But remember, timing and patience are your allies in this rhythmic journey! A lack of focus will quickly end your run. Embrace the challenge and let the music guide you!</p>
+    
+      <h3>Why Dancing Beat is So Addictive:</h3>
+      <ul>
+        <li><strong>Smooth Transitions and Vibrant Graphic Effects:</strong> Immerse yourself in a visually stunning world.</li>
+        <li><strong>Beautiful Soundtracks Shaping Every Visual Move:</strong> Experience music that dynamically influences the game world.</li>
+        <li><strong>One-Click Control with Endless Replay Value:</strong> Easy to learn, hard to master, with endless opportunities for improvement.</li>
+        <li><strong>Distinct Environments Crafted for Immersive Play:</strong> Explore diverse and captivating environments.</li>
+        <li><strong>Increasing Challenge That Sharpens Player Reflexes:</strong> Constantly test and improve your skills.</li>
+      </ul>
+    
+      <h3>Ready to Groove?</h3>
+      <p>Dancing Beat is more than just a game; it's an experience that blends music, reflexes, and visual artistry into a single, addictive package. Sharpen your skills, embrace the rhythm, and see how long you can stay in tune! Start your rhythmic adventure today!</p>
+    
+      <h3>FAQ</h3>
+      <ol>
+        <li><strong>What is the main goal of Dancing Beat?</strong><br>The main goal is to guide your ball through a maze that builds itself in real-time, synchronized with the music, while avoiding obstacles.</li>
+        <li><strong>How do I control the ball in Dancing Beat?</strong><br>You control the ball with simple one-click control. Click the screen at the precise moment to change direction at corners or edges.</li>
+        <li><strong>What happens if I miss a beat?</strong><br>If you miss a beat and click at the wrong time, the ball will crash, and the level will restart instantly.</li>
+        <li><strong>Does the game get harder as I progress?</strong><br>Yes, as the music evolves, the patterns become trickier with faster sequences, tighter turns, and complex rhythm breaks.</li>
+        <li><strong>Are there any hidden elements in the game?</strong><br>Yes, some stages include hidden pathways and rhythm traps, requiring quick recognition of upcoming cues.</li>
+        <li><strong>What makes Dancing Beat so addictive?</strong><br>The addictive nature of Dancing Beat comes from its smooth transitions, vibrant graphic effects, beautiful soundtracks, simple controls, diverse environments, and increasing challenge.</li>
+      </ol>
+    
+      <p>Dancing Beat is an immersive musical journey that will challenge your reflexes and captivate your senses. Download now and experience the addictive blend of rhythm and arcade action!</p>
+    </div>`,
     }
 ]
