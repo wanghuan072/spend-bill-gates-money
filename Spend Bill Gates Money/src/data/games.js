@@ -1587,5 +1587,61 @@ export const games = [
     
       <p>Dancing Beat is an immersive musical journey that will challenge your reflexes and captivate your senses. Download now and experience the addictive blend of rhythm and arcade action!</p>
     </div>`,
-    }
+    },
+
+    {
+      id: 49,
+      title: "Bottle Hop",
+      iframeUrl: "https://gamea.azgame.io/bottle-hop/",
+      description:
+        "Flip a plastic bottle through furniture-filled rooms in Bottle Hop! This one-button casual arcade game tests your timing and reflexes—bounce across tables, chairs, and shelves, land on the finish platform in one run, and unlock 20+ bottle skins with gems. Hundreds of physics-based levels await.",
+      publishDate: "2026-03-31",
+      isHot: false,
+      imageUrl: "/images/games/game-49.webp",
+      imageAlt:
+        "Bottle Hop casual arcade game screenshot: a plastic bottle hopping across household furniture toward a finish platform.",
+      seo: {
+        title: "Bottle Hop - Free Online Bottle Flip Arcade Game",
+        description:
+          "Play Bottle Hop online: physics-based bottle flipping, hundreds of levels, one-tap controls, and unlockable bottles. Hop across furniture and reach the finish without hitting the floor!",
+        keywords:
+          "Bottle Hop, bottle flip game, casual arcade, physics game, one tap, browser game, free online game, Azgames, skill game, unlock bottles",
+      },
+      addressBar: "bottle-hop",
+      detailsHtml: `<div>
+      <h2>Bottle Hop: Flip, Bounce, and Stick the Landing</h2>
+      <p>Bottle Hop is a fast, addictive casual arcade experience built around timing, precision, and reflexes. You guide a plastic bottle through indoor scenes packed with everyday furniture and objects—jumping and flipping from surface to surface until you safely reach the finish platform in a single run. Drop to the floor and the level is over, so every hop counts.</p>
+
+      <h3>Gameplay</h3>
+      <p>This is a <strong>one-button</strong> physics-style bottle-flipping game. Each stage is a compact obstacle course made of tables, chairs, bookshelves, TVs, lamps, kitchen items, and more. You must chain landings across platforms; unstable or moving spots demand quicker reactions. Complete a level by landing on the final platform, then collect <strong>gem rewards</strong> to unlock new bottle looks—over twenty skins are available for extra variety.</p>
+
+      <h3>Features</h3>
+      <ul>
+        <li><strong>Physics-based flipping:</strong> Satisfying jumps and bounces that reward good timing.</li>
+        <li><strong>Hundreds of levels:</strong> Difficulty ramps up as you progress.</li>
+        <li><strong>20+ unlockable bottles:</strong> Spend gems on fresh skins and keep runs feeling new.</li>
+        <li><strong>Dynamic home environments:</strong> Familiar furniture and props form creative platform layouts.</li>
+        <li><strong>Simple controls:</strong> Easy to pick up, hard to master when the gaps get tight.</li>
+      </ul>
+
+      <h3>How to Play</h3>
+      <p>Stay calm and read each layout before you commit to a jump—rushing is an easy way to miss a narrow landing. When platforms look shaky or timed, move decisively; hesitation often means a fall.</p>
+      <ul>
+        <li><strong>Left mouse click:</strong> Jump and flip the bottle.</li>
+        <li><strong>Double click:</strong> Double jump or flip higher when you need extra height or distance.</li>
+      </ul>
+      <p>Hop between surfaces, land squarely before the next leap, and ride the momentum all the way to the finish. Gems from completed levels feed the unlock loop so you can personalize your bottle for the tougher stages ahead.</p>
+
+      <h3>FAQ</h3>
+      <ol>
+        <li><strong>What is the goal in Bottle Hop?</strong><br>Reach the finish platform in one continuous run without letting the bottle fall to the ground.</li>
+        <li><strong>How do I control the bottle?</strong><br>Use the left mouse button to jump and flip; double-click for a higher or double jump when the layout requires it.</li>
+        <li><strong>What happens if I fall?</strong><br>The level fails and you’ll need to retry that stage.</li>
+        <li><strong>What are gems for?</strong><br>Gems are earned by completing levels and can be used to unlock additional bottle skins.</li>
+        <li><strong>Is Bottle Hop free to play in the browser?</strong><br>Yes—you can play the embedded version directly on this page.</li>
+      </ol>
+
+      <p>Whether you love bottle-flip challenges or quick arcade sessions, Bottle Hop delivers bite-sized levels, clear rules, and plenty of room to improve your timing. Start flipping and see how far your streak can go!</p>
+    </div>`,
+    },
 ]
