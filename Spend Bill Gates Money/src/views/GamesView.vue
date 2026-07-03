@@ -11,10 +11,11 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="native" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 游戏列表 -->
     <section class="games-section" aria-labelledby="games-title">
@@ -34,10 +35,11 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 底部Footer -->
     <Footer />
@@ -48,7 +50,6 @@
 import Header from '../components/Header.vue'
 import GameCard from '../components/GameCard.vue'
 import Footer from '../components/Footer.vue'
-import AdSlot from '../components/AdSlot.vue'
 import { games } from '../data/games.js'
 
 // 获取所有游戏

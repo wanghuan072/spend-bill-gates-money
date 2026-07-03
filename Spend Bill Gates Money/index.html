@@ -81,13 +81,14 @@
         gtag('js', new Date());
         gtag('config', 'G-RW96WM7YF5');
 
-        // Google AdSense（已暂停，改用联盟广告）
-        // const adsScript = document.createElement('script');
-        // adsScript.async = true;
-        // adsScript.defer = true;
-        // adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2596253057392425';
-        // adsScript.crossOrigin = 'anonymous';
-        // document.head.appendChild(adsScript);
+
+        // Google AdSense
+        const adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.defer = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2596253057392425';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
       }, 3000);
     });
   </script>
@@ -120,9 +121,6 @@
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
-
-  <!-- Popunder -->
-  <script src="https://pl30178223.effectivecpmnetwork.com/81/84/76/81847652f01613b08da06d86629a2489.js"></script>
 
   <!-- 数据收集脚本 -->
   <script src="/collet-data.js"></script>

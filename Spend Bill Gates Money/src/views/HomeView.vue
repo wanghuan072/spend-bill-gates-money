@@ -16,10 +16,11 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="native" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 余额显示区域 - 固定头部 -->
     <section class="balance-section" :class="{ fixed: isScrolled }" aria-labelledby="balance-title"
@@ -60,10 +61,11 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 商品列表区域 -->
     <section class="products-section" aria-labelledby="products-title" v-if="gameStore.currentCharacter">
@@ -94,10 +96,11 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 收据区域 -->
     <section class="receipt-section" v-if="gameStore.showReceipt" role="dialog" aria-labelledby="receipt-title"
@@ -116,18 +119,20 @@
       </div>
     </section>
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 热门游戏区域 -->
     <HotGames @select="navigateToGame" />
 
-    <!-- 广告占位符 -->
+    <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
     <!-- 钱花完弹窗 -->
     <MoneyExhaustedModal :show="gameStore.showMoneyExhaustedModal"
@@ -152,7 +157,6 @@ import ReceiptTable from '../components/ReceiptTable.vue'
 import HotGames from '../components/HotGames.vue'
 import Footer from '../components/Footer.vue'
 import MoneyExhaustedModal from '../components/MoneyExhaustedModal.vue'
-import AdSlot from '../components/AdSlot.vue'
 import { setPageSEO } from '../utils/seo.js'
 import {
   insertStructuredData,

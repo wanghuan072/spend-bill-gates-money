@@ -16,10 +16,11 @@
     <div v-else class="layout">
       <!-- 左列：主内容 -->
       <section class="main" :class="{ 'page-fullscreen': isPageFullscreen }">
-        <!-- 广告占位符 -->
+        <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="native" />
+      广告占位符
     </aside>
+    -->
 
         <div class="player">
           <!-- 预览蒙版（点击后显示 iframe） -->
@@ -67,18 +68,20 @@
           </div>
         </div>
 
-        <!-- 广告占位符 -->
+        <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
         <!-- About 内容（v-html 渲染） -->
         <article class="about" v-html="game.detailsHtml"></article>
 
-        <!-- 广告占位符 -->
+        <!-- 广告占位符
     <aside class="container" style="display: flex; justify-content: center; align-items: center;">
-      <AdSlot variant="banner" />
+      广告占位符
     </aside>
+    -->
 
       </section>
 
@@ -190,7 +193,6 @@ import { useRoute } from 'vue-router'
 import Header from '../components/Header.vue'
 import HotGames from '../components/HotGames.vue'
 import Footer from '../components/Footer.vue'
-import AdSlot from '../components/AdSlot.vue'
 import { games } from '../data/games.js'
 import { useCommentStore } from '../stores/commentStore'
 import { setGameDetailPageSEO } from '../utils/seo.js'
