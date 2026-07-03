@@ -16,6 +16,11 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="native" />
+    </aside>
+
     <!-- 余额显示区域 - 固定头部 -->
     <section class="balance-section" :class="{ fixed: isScrolled }" aria-labelledby="balance-title"
       v-if="gameStore.currentCharacter">
@@ -54,6 +59,12 @@
         </div>
       </div>
     </section>
+
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
     <!-- 商品列表区域 -->
     <section class="products-section" aria-labelledby="products-title" v-if="gameStore.currentCharacter">
       <div class="products-container">
@@ -83,6 +94,11 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
     <!-- 收据区域 -->
     <section class="receipt-section" v-if="gameStore.showReceipt" role="dialog" aria-labelledby="receipt-title"
       aria-modal="true">
@@ -91,7 +107,7 @@
         <ReceiptTable :show-receipt="gameStore.showReceipt" @close="closeReceipt" />
       </div>
     </section>
-
+    
     <!-- 角色详细信息 -->
     <section class="character-details-section"
       v-if="gameStore.currentCharacter && gameStore.currentCharacter.detailsHtml">
@@ -100,8 +116,18 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
     <!-- 热门游戏区域 -->
     <HotGames @select="navigateToGame" />
+
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
 
     <!-- 钱花完弹窗 -->
     <MoneyExhaustedModal :show="gameStore.showMoneyExhaustedModal"
@@ -126,6 +152,7 @@ import ReceiptTable from '../components/ReceiptTable.vue'
 import HotGames from '../components/HotGames.vue'
 import Footer from '../components/Footer.vue'
 import MoneyExhaustedModal from '../components/MoneyExhaustedModal.vue'
+import AdSlot from '../components/AdSlot.vue'
 import { setPageSEO } from '../utils/seo.js'
 import {
   insertStructuredData,

@@ -11,6 +11,11 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="native" />
+    </aside>
+
     <!-- 服务条款内容 -->
     <div class="container">
       <div class="terms-section">
@@ -189,6 +194,10 @@
       </div>
     </div>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
 
     <!-- 底部Footer -->
     <Footer />
@@ -198,6 +207,7 @@
 <script setup>
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import AdSlot from '../components/AdSlot.vue'
 </script>
 
 <style scoped>

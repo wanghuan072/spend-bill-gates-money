@@ -11,6 +11,11 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="native" />
+    </aside>
+
     <!-- 联系信息 -->
     <section class="contact-section">
       <div class="container">
@@ -74,6 +79,11 @@
       </div>
     </section>
 
+    <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
     <!-- 底部Footer -->
     <Footer />
   </main>
@@ -82,6 +92,7 @@
 <script setup>
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import AdSlot from '../components/AdSlot.vue'
 </script>
 
 <style scoped>

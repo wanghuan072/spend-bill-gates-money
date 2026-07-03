@@ -16,6 +16,11 @@
     <div v-else class="layout">
       <!-- 左列：主内容 -->
       <section class="main" :class="{ 'page-fullscreen': isPageFullscreen }">
+        <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="native" />
+    </aside>
+
         <div class="player">
           <!-- 预览蒙版（点击后显示 iframe） -->
           <div v-if="!showGameplay" class="preview" @click="toggleGameplay">
@@ -35,6 +40,7 @@
               @load="onIframeLoad"></iframe>
           </div>
         </div>
+        
 
         <!-- 操作栏：左标题，右侧全屏/网页全屏按钮 -->
         <div class="controls">
@@ -61,8 +67,19 @@
           </div>
         </div>
 
+        <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
         <!-- About 内容（v-html 渲染） -->
         <article class="about" v-html="game.detailsHtml"></article>
+
+        <!-- 广告占位符 -->
+    <aside class="container" style="display: flex; justify-content: center; align-items: center;">
+      <AdSlot variant="banner" />
+    </aside>
+
       </section>
 
       <!-- 右列：评分/评论 -->
@@ -173,6 +190,7 @@ import { useRoute } from 'vue-router'
 import Header from '../components/Header.vue'
 import HotGames from '../components/HotGames.vue'
 import Footer from '../components/Footer.vue'
+import AdSlot from '../components/AdSlot.vue'
 import { games } from '../data/games.js'
 import { useCommentStore } from '../stores/commentStore'
 import { setGameDetailPageSEO } from '../utils/seo.js'
